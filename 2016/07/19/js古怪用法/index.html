@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -84,15 +84,37 @@
 
 
 
-<meta name="description" content="最朴素的生活，最遥远的梦想">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Over the Rainbow">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="学习js已有一段时间，再读JavaScript 秘密花园。
+
+对象对象使用和属性删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。
+原型js不包含传统的类继承模型，而是使用prototype原型继承模型。
+  function Foo() {
+    this.value = 42;
+}
+Foo.prototype">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js古怪用法">
+<meta property="og:url" content="http://yoursite.com/2016/07/19/js古怪用法/index.html">
 <meta property="og:site_name" content="Over the Rainbow">
-<meta property="og:description" content="最朴素的生活，最遥远的梦想">
+<meta property="og:description" content="学习js已有一段时间，再读JavaScript 秘密花园。
+
+对象对象使用和属性删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。
+原型js不包含传统的类继承模型，而是使用prototype原型继承模型。
+  function Foo() {
+    this.value = 42;
+}
+Foo.prototype">
+<meta property="og:updated_time" content="2016-08-19T09:46:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Over the Rainbow">
-<meta name="twitter:description" content="最朴素的生活，最遥远的梦想">
+<meta name="twitter:title" content="js古怪用法">
+<meta name="twitter:description" content="学习js已有一段时间，再读JavaScript 秘密花园。
+
+对象对象使用和属性删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。
+原型js不包含传统的类继承模型，而是使用prototype原型继承模型。
+  function Foo() {
+    this.value = 42;
+}
+Foo.prototype">
 
 
 
@@ -113,9 +135,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/19/js古怪用法/"/>
 
-  <title> Over the Rainbow </title>
+  <title> js古怪用法 | Over the Rainbow </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +158,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -225,9 +245,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -247,113 +267,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/08/19/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T16:39:19+08:00" content="2016-08-19">
-              2016-08-19
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>嗯，我将博客搬到了这里，Welcome</p>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/19/js古怪用法/" itemprop="url">
-                  js古怪用法
-                </a>
+                js古怪用法
               
             
           </h1>
@@ -393,9 +307,7 @@
       
 
       
-        
-          
-            <p>学习js已有一段时间，再读<a href="http://www.jb51.net/onlineread/JavaScript-Garden-CN/" target="_blank" rel="external">JavaScript 秘密花园</a>。</p>
+        <p>学习js已有一段时间，再读<a href="http://www.jb51.net/onlineread/JavaScript-Garden-CN/" target="_blank" rel="external">JavaScript 秘密花园</a>。</p>
 <hr>
 <h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><h5 id="对象使用和属性"><a href="#对象使用和属性" class="headerlink" title="对象使用和属性"></a>对象使用和属性</h5><p>删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。</p>
 <h5 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h5><p>js不包含传统的类继承模型，而是使用prototype原型继承模型。</p>
@@ -742,36 +654,59 @@ is(&apos;String&apos;, &apos;test&apos;); // true
 is(&apos;String&apos;, new String(&apos;test&apos;)); // true
 </code></pre><h5 id="instanceof操作符"><a href="#instanceof操作符" class="headerlink" title="instanceof操作符"></a>instanceof操作符</h5><p>instanceof操作符用来比较两个操作数的构造函数，只有在比较自定义对象的时候才有意义，如果用于比较内置对象，则像typeof操作符一样意义不大。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/19/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -779,6 +714,10 @@ is(&apos;String&apos;, new String(&apos;test&apos;)); // true
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -798,8 +737,17 @@ is(&apos;String&apos;, new String(&apos;test&apos;)); // true
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/source/images/avatar.jpg"
@@ -853,6 +801,17 @@ is(&apos;String&apos;, new String(&apos;test&apos;)); // true
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象使用和属性"><span class="nav-number">1.0.1.</span> <span class="nav-text">对象使用和属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型"><span class="nav-number">1.0.2.</span> <span class="nav-text">原型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hasOwnProperty函数"><span class="nav-number">1.0.3.</span> <span class="nav-text">hasOwnProperty函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-in循环"><span class="nav-number">1.0.4.</span> <span class="nav-text">for in循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数声明与表达式"><span class="nav-number">2.0.1.</span> <span class="nav-text">函数声明与表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关于this"><span class="nav-number">2.0.2.</span> <span class="nav-text">关于this</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包和引用"><span class="nav-number">2.0.3.</span> <span class="nav-text">闭包和引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#arguments对象"><span class="nav-number">2.0.4.</span> <span class="nav-text">arguments对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数"><span class="nav-number">2.0.5.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用域与命名空间"><span class="nav-number">2.0.6.</span> <span class="nav-text">作用域与命名空间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数组遍历和属性"><span class="nav-number">3.0.1.</span> <span class="nav-text">数组遍历和属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Array构造函数"><span class="nav-number">3.0.2.</span> <span class="nav-text">Array构造函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-number">4.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#相等于比较"><span class="nav-number">4.0.1.</span> <span class="nav-text">相等于比较</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#typeof操作符"><span class="nav-number">4.0.2.</span> <span class="nav-text">typeof操作符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#instanceof操作符"><span class="nav-number">4.0.3.</span> <span class="nav-text">instanceof操作符</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -949,6 +908,10 @@ is(&apos;String&apos;, new String(&apos;test&apos;)); // true
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
