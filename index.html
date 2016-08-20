@@ -248,6 +248,122 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/16/ES6-Promise对象初探/" itemprop="url">
+                  ES6-Promise对象初探
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-16T22:12:53+08:00" content="2016-08-16">
+              2016-08-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>ES6标准中的Promise是异步编程的一种解决方案，除此之外还有回调函数，事件监听及发布/订阅。Promise对象保存未来事件（通常是一个异步操作）的结果，提供了API对各种异步操作做同样的处理。</p>
+<p>Promise对象有以下几个状态：</p>
+<ol>
+<li>Pending：进行中</li>
+<li>Resolved：又称Fulfilled，已完成</li>
+<li>Rejected：已失败</li>
+</ol>
+<p>Promise对象有以下特点：</p>
+<ol>
+<li>对象的状态不受外界影响。只有异步操作的结果决定了当前的状态，其他任何操作都无法改变。这也是Promise名字的由来，意即“承诺”。</li>
+<li>一旦状态改变，就不会再变，且任何时候都可以得到这个结果。具体来说，Promise对象的状态改变只有两种情况：从Pending到Resolved，或者从Pending到Rejected，只要这两种情况之一发生了，状态就会一直保持。且如果一个任务完成（状态改变），再添加回调函数，该回调函数会立即执行。这与事件不同，如果在触发事件之后监听将没有效果。</li>
+</ol>
+<p>有了Promise对象，就可以将异步操作以同步的流程表达出来，避免了层层嵌套的回调函数。且统一API使得对异步操作的控制更加方便。</p>
+<p>下面是一种简单的使用方式：</p>
+<pre><code>var promise = new Promise(function(resolve, reject) {
+  setTimeout(function(){
+    resolve(&apos;val&apos;)
+  });
+});
+
+promise.then(onFulfilled,onRejected).catch(onRejected)
+</code></pre><p>Promise.prototype.then(onFulfilled，onRejected)为Promise实例添加状态改变时的回调函数，第二个参数是可选的。</p>
+<p>Promise.prototype.catch(onRejected)指定异步操作发生错误时的回调函数，此外，then方法指定的回调函数运行时抛出的错误也会触发该回调函数。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/19/js古怪用法/" itemprop="url">
                   js古怪用法
                 </a>
@@ -707,7 +823,7 @@ is(&apos;String&apos;, new String(&apos;test&apos;)); // true
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
