@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Over the Rainbow
 subtitle:
-description:
-author: John Doe
-language:
+description: 最朴素的生活，最遥远的梦想
+author: 雨虹
+language: zh-Hans
 timezone:
 
 # URL
@@ -63,11 +63,13 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git
   repo: https://github.com/rainy-rainy/rainy-rainy.github.io.git
   branch: master
+
+avatar: source/images/avatar.jpg

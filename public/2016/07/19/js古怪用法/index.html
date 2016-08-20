@@ -1,0 +1,942 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="学习js已有一段时间，再读JavaScript 秘密花园。
+
+对象对象使用和属性删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。
+原型js不包含传统的类继承模型，而是使用prototype原型继承模型。
+  function Foo() {
+    this.value = 42;
+}
+Foo.prototype">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js古怪用法">
+<meta property="og:url" content="http://yoursite.com/2016/07/19/js古怪用法/index.html">
+<meta property="og:site_name" content="Over the Rainbow">
+<meta property="og:description" content="学习js已有一段时间，再读JavaScript 秘密花园。
+
+对象对象使用和属性删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。
+原型js不包含传统的类继承模型，而是使用prototype原型继承模型。
+  function Foo() {
+    this.value = 42;
+}
+Foo.prototype">
+<meta property="og:updated_time" content="2016-08-19T09:46:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js古怪用法">
+<meta name="twitter:description" content="学习js已有一段时间，再读JavaScript 秘密花园。
+
+对象对象使用和属性删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。
+原型js不包含传统的类继承模型，而是使用prototype原型继承模型。
+  function Foo() {
+    this.value = 42;
+}
+Foo.prototype">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/19/js古怪用法/"/>
+
+  <title> js古怪用法 | Over the Rainbow </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Over the Rainbow</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                js古怪用法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-19T20:34:39+08:00" content="2016-07-19">
+              2016-07-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>学习js已有一段时间，再读<a href="http://www.jb51.net/onlineread/JavaScript-Garden-CN/" target="_blank" rel="external">JavaScript 秘密花园</a>。</p>
+<hr>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><h5 id="对象使用和属性"><a href="#对象使用和属性" class="headerlink" title="对象使用和属性"></a>对象使用和属性</h5><p>删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。</p>
+<h5 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h5><p>js不包含传统的类继承模型，而是使用prototype原型继承模型。</p>
+<pre><code>  function Foo() {
+    this.value = 42;
+}
+Foo.prototype = {
+    method: function() {}
+};
+
+function Bar() {}
+
+// 设置Bar的prototype属性为Foo的实例对象
+Bar.prototype = new Foo();
+Bar.prototype.foo = &apos;Hello World&apos;;
+
+// 修正Bar.prototype.constructor为Bar本身
+Bar.prototype.constructor = Bar;
+
+var test = new Bar() // 创建Bar的一个新实例
+
+// 原型链
+test [Bar的实例]
+    Bar.prototype [Foo的实例] 
+        { foo: &apos;Hello World&apos; }
+        Foo.prototype
+            {method: ...};
+            Object.prototype
+                {toString: ... /* etc. */};
+</code></pre><p>上面的例子中，test 对象从 Bar.prototype 和 Foo.prototype 继承下来；因此， 它能访问 Foo 的原型方法 method。同时，它也能够访问那个定义在原型上的 Foo 实例属性 value。 需要注意的是 new Bar() 不会创造出一个新的 Foo 实例，而是 重复使用它原型上的那个实例；因此，所有的 Bar 实例都会共享相同的 value 属性。</p>
+<p>属性查找：在查找一个对象的属性时，JS会向上遍历原型链，直到找到为止。如果到达原型链的顶端也就是Object.prototype仍然没有找到指定的属性，就返回undefined。</p>
+<p>性能：要警惕原型链过长带来的性能问题：如果一个属性在原型链顶端，则对于查找时间会带来不利影响，特别的，当试图获取一个 不存在的属性时会遍历整个原型链。此外，当使用for…in来循环遍历对象的属性时，原型链上的所有属性都将被访问。</p>
+<h5 id="hasOwnProperty函数"><a href="#hasOwnProperty函数" class="headerlink" title="hasOwnProperty函数"></a>hasOwnProperty函数</h5><p>用来判断一个属性是自定义属性而不是原型链上的属性。hasOwnProperty是js中<em>唯一</em>处理属性但是不查找原型链的函数。</p>
+<pre><code>// 修改Object.prototype
+Object.prototype.bar = 1; 
+var foo = {goo: undefined};
+
+foo.bar; // 1
+&apos;bar&apos; in foo; // true
+
+foo.hasOwnProperty(&apos;bar&apos;); // false
+foo.hasOwnProperty(&apos;goo&apos;); // true
+</code></pre><p>使用for…in loop遍历对象属性时推荐使用hasOwnProperty方法来避免原型对象扩展带来的干扰。</p>
+<h5 id="for-in循环"><a href="#for-in循环" class="headerlink" title="for in循环"></a>for in循环</h5><p>同in操作符一样，for in循环同样在查找对象属性时遍历整个原型链。</p>
+<pre><code>// 修改 Object.prototype
+Object.prototype.bar = 1;
+
+var foo = {moo: 2};
+for(var i in foo) {
+    console.log(i); // 输出两个属性：bar 和 moo
+}
+</code></pre><p>不可能改变for in自身的行为，但是可以用hasOwnProperty来过滤出那些不希望出现在循环体中的属性。</p>
+<pre><code>// foo 变量是上例中的
+for(var i in foo) {
+    if (foo.hasOwnProperty(i)) {
+        console.log(i);
+    }
+}
+</code></pre><p>这是唯一正确的写法。比如广泛使用的库Prototype就扩展了原生的js对象（不推荐该种破坏封装的做法）。因此，当使用这种类库时，如果不使用hasOwnProperty过滤的for in就难免会出现问题。</p>
+<p>因此推荐总是使用hasOwnProperty，不要对代码的运行环境做任何假设，不要假设原生对象是否被扩展了。</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h5 id="函数声明与表达式"><a href="#函数声明与表达式" class="headerlink" title="函数声明与表达式"></a>函数声明与表达式</h5><p>函数也是一个对象，因此可以作为参数传递或者作为返回值，一个常见的做法是把匿名函数作为回调函数传递到异步函数中。</p>
+<p>有两种定义函数的方式：函数声明和函数表达式。主要区别是函数声明创建的方法会在执行前被解析，因此它存在于当前上下文的任何一个地方，即使在函数定义体的上面调用也是完全正确的。</p>
+<pre><code>//函数声明
+foo(); // 正常运行，因为foo在代码运行前已经被创建
+function foo() {}
+</code></pre><p>上面这段代码没有问题，因为使用了函数声明。下面这段代码会出错：</p>
+<pre><code>//函数赋值表达式
+foo; // &apos;undefined&apos;
+foo(); // 出错：TypeError
+var foo = function() {};
+</code></pre><p>var定义了一个声明语句，对变量foo的解析是在运行之前，因此<em>foo变量在代码时已经被定义过</em>了，但是由于<em>赋值语句只在运行时执行</em>，因此在相应代码执行之前，foo的值为缺省undefined。</p>
+<h5 id="关于this"><a href="#关于this" class="headerlink" title="关于this"></a>关于this</h5><p>this的指向有五种情况：</p>
+<ol>
+<li>全局范围内：指向全局对象。</li>
+<li><p>函数调用：</p>
+<pre><code>foo();
+</code></pre><p> 指向全局对象。</p>
+</li>
+<li><p>方法调用：</p>
+<pre><code>test.foo();
+</code></pre><p> 指向test对象。</p>
+</li>
+<li><p>调用构造函数：</p>
+<pre><code>new Foo();
+</code></pre><p> 如果函数和new关键词一起使用，称这个函数为构造函数，惯例首字母大写。</p>
+<p> 此时的this指向新创建的对象。</p>
+</li>
+<li><p>显示的设置this：</p>
+<pre><code>function foo(a, b, c) {}
+
+var bar = {};
+foo.apply(bar, [1, 2, 3]); // 数组将会被扩展，如下所示
+foo.call(bar, 1, 2, 3); // 传递到foo的参数是：a = 1, b = 2, c = 3
+</code></pre><p> 使用Function.prototype上的apply和call方法，this会被设置为第一个参数。可以认为这call和apply都是借用别人的方法来调用自己。</p>
+<p> 这两个方法的区别在于传参方式不同，参数明确的时候可以用apply，参数不明确时可以使用apply结合arguments。</p>
+</li>
+</ol>
+<p><strong>-小心误解</strong>：</p>
+<p>第二个（直接调用函数时，this指向全局对象）规则被认为是js中的一个错误的设计，因为它从来就没有实际用途。</p>
+<p>当使用函数别名时，可能会令人疑惑：</p>
+<pre><code>var test = someObject.methodTest;
+test();
+</code></pre><p>上例中将一个对象的方法赋值给test，调用test时就像在调用一个普通的函数，因此此时的this并不指向someObject对象，而是指向全局对象。</p>
+<pre><code>function Foo() {}
+Foo.prototype.method = function() {};
+
+function Bar() {}
+Bar.prototype = Foo.prototype;
+
+new Bar().method();
+</code></pre><p>当 method 被调用时，this 将会指向 Bar 的实例对象。</p>
+<h5 id="闭包和引用"><a href="#闭包和引用" class="headerlink" title="闭包和引用"></a>闭包和引用</h5><p>闭包是js一个非常重要的特性，使得当前作用域可以访问外部作用域中的变量。函数是js中唯一拥有自身作用域的结构，因此闭包的创建依赖于函数。</p>
+<p>使用闭包可以模拟私有变量：</p>
+<pre><code>function Counter(start) {
+    var count = start;
+    return {
+        increment: function() {
+            count++;
+        },
+
+        get: function() {
+            return count;
+        }
+    }
+}
+
+var foo = Counter(4);
+foo.increment();
+foo.get(); // 5
+</code></pre><p>这里，构造函数Counter返回两个闭包：函数increment和函数get，这两个函数都维持着对外部作用域Counter的引用，因此总可以访问此作用域内定义的变量count。</p>
+<p>js中不可以对作用域进行引用或赋值，因此没有办法在外部访问count变量，唯一途径就是通过那两个闭包。</p>
+<pre><code>var foo = new Counter(4);
+foo.hack = function() {
+    count = 1337;
+}; //这里赋值foo.hack无效，因为foo.hack没有定义在当前作用域内，反而会创建或赋值全局count变量
+</code></pre><p><strong>-小心循环中使用闭包</strong>：</p>
+<p>一个常见的错误就是在循环中使用闭包：</p>
+<pre><code>for(var i = 0; i &lt; 10; i++) {
+    setTimeout(function() {
+        console.log(i);  
+    }, 1000);
+}
+</code></pre><p>上面代码并不会输出0-9，而是输出十次10。</p>
+<p>当console.log被调用的时候，匿名函数保持了对外部i的调用，此时for循环已经结束，i的值被修改为了10。为了得到想要的结果，需要在每次循环中创建i的拷贝。</p>
+<p>可以使用<strong>匿名包装器</strong>（也就是自执行匿名函数）。</p>
+<pre><code>for(var i = 0; i &lt; 10; i++) {
+    (function(e) {
+        setTimeout(function() {
+            console.log(e);  
+        }, 1000);
+    })(i);
+}
+</code></pre><p>外部的匿名函数会立即执行，并把i作为它的参数，此时函数内e变量就拥有了i的拷贝。当传递给 setTimeout的匿名函数执行时，它就拥有了对e的引用，而这个值是不会被循环改变的。</p>
+<p>或者从匿名包装器中返回一个函数，这和上面代码效果一样。</p>
+<pre><code>for(var i = 0; i &lt; 10; i++) {
+    setTimeout((function(e) {
+        return function() {
+            console.log(e);
+        }
+    })(i), 1000)
+}
+</code></pre><h5 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h5><p>js中每个函数都能访问一个特别变量：arguments。这个变量维护所有传递到这个函数的参数列表。</p>
+<p>arguments变量有length属性，但是它不是一个数组，实际上它是一个对象（Object）。</p>
+<p>可以使用for对其循环遍历，但是不能使用标准的数组方法，如push，pop或slice等。为了更好的使用数组方法，可以将其转换为数组。下面的代码会创建一个数组，包含所有arguments对象中的元素：</p>
+<pre><code>Array.prototype.slice.call(arguments);
+</code></pre><p>这个转换比较慢。</p>
+<p>如果需要将参数从一个函数传递到另一个函数，推荐使用apply：</p>
+<pre><code>function foo() {
+    bar.apply(null, arguments);
+}
+function bar(a, b, c) {
+    // 干活
+}
+</code></pre><p>arguments为其内部属性以及函数形式参数创建getter和setter方法，因此改变形参的值会影响arguments的值，反之亦然。</p>
+<pre><code>function foo(a, b, c) {
+    arguments[0] = 2;
+    a; // 2                                                           
+
+    b = 4;
+    arguments[1]; // 4
+
+    var d = c;
+    d = 9;
+    c; // 3
+}
+foo(1, 2, 3);
+</code></pre><p>arguments.calle属性指向调用函数，会影响js引擎的性能。</p>
+<h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h5><p><em>通过new 关键字调用的函数都是构造函数。</em></p>
+<p>在构造函数内部，this指向新创建的对象，这个新创建对象的prototype被指向到构造函数的prototype。</p>
+<p>如果被调用的函数没有显式的return表达式，则<em>隐式的会返回this对象</em>——也就是新创建的对象。</p>
+<pre><code>function Foo() {
+    this.bla = 1;
+}
+
+Foo.prototype.test = function() {
+    console.log(this.bla);
+};
+
+var test = new Foo();
+</code></pre><p>上面代码把Foo作为构造函数调用，并设置新创建对象的prototype为Foo.prototype。</p>
+<p>显式的return表达式将会影响返回结果，但<em>仅限于返回的是一个对象</em>。</p>
+<pre><code>function Bar() {
+    return 2;
+}
+new Bar(); // 返回新创建的对象，而不是字面值2，因此new Bar().constructor===Bar
+
+function Test() {
+    this.value = 2;
+
+    return {
+        foo: 1
+    };
+}
+new Test(); // 返回创建的对象
+</code></pre><h5 id="作用域与命名空间"><a href="#作用域与命名空间" class="headerlink" title="作用域与命名空间"></a>作用域与命名空间</h5><p>js不支持块级作用域，只支持函数作用域。</p>
+<pre><code>function test() { // 一个作用域
+    for(var i = 0; i &lt; 10; i++) { // 不是一个作用域
+        // count
+    }
+    console.log(i); // 10
+}
+</code></pre><p>js没有显示的命名空间定义，这意味着所有对象都定义在一个全局共享的命名空间下。</p>
+<p>每次引用一个变量，js会向上遍历整个作用域直到找到这个变量为止。如果到达全局作用域仍未找到，则会抛出ReferenceError异常。</p>
+<p>所有未用var关键字声明的变量都是全局变量。js声明局部变量只有两种方式，一个是作为函数参数，一个是用var关键字。</p>
+<p><strong>-变量声明提升（Hoisting）</strong></p>
+<pre><code>bar();
+var bar = function() {};
+var someValue = 42;
+
+test();
+function test(data) {
+    if (false) {
+        goo = 1;
+
+    } else {
+        var goo = 2;
+    }
+    for(var i = 0; i &lt; 100; i++) {
+        var e = data[i];
+    }
+}
+</code></pre><p>上面代码在运行之前将会被转化。JavaScript 将会把 var 表达式和 function 声明提升到当前作用域的顶部。但赋值语句不会被提升。</p>
+<pre><code>// var 表达式被移动到这里
+var bar, someValue; // 缺省值是 &apos;undefined&apos;
+
+// 函数声明也会提升
+function test(data) {
+    var goo, i, e; // 没有块级作用域，这些变量被移动到函数顶部
+    if (false) {  //if 表达式看起来修改了全局变量 goo，实际上在提升规则被应用后，却是在修改局部变量。
+        goo = 1;
+
+    } else {
+        goo = 2;
+    }
+    for(i = 0; i &lt; 100; i++) {
+        e = data[i];
+    }
+}
+
+bar(); // 出错：TypeError，因为 bar 依然是 &apos;undefined&apos;
+someValue = 42; // 赋值语句不会被提升规则（hoisting）影响
+bar = function() {};
+
+test();
+</code></pre><p>如果没有提升规则（hoisting）的知识，下面的代码看起来会抛出异常 ReferenceError。</p>
+<pre><code>// 检查 SomeImportantThing 是否已经被初始化
+if (!SomeImportantThing) {
+    var SomeImportantThing = {};
+}
+</code></pre><p>实际上，上面的代码正常运行，因为 var 表达式会被提升到全局作用域的顶部。</p>
+<pre><code>var SomeImportantThing;
+
+// 其它一些代码，可能会初始化 SomeImportantThing，也可能不会
+
+// 检查是否已经被初始化
+if (!SomeImportantThing) {
+    SomeImportantThing = {};
+}
+</code></pre><p>下面这段代码执行结果也是由于hoisting的作用</p>
+<pre><code>var myvar = &apos;my value&apos;;  
+
+(function() {  
+    alert(myvar); // undefined  
+    var myvar = &apos;local value&apos;;  
+})(); 
+</code></pre><p><strong>-名称解析顺序</strong></p>
+<p>当访问函数中的foo变量时，js会按照以下顺序查找：</p>
+<ol>
+<li>当前作用域内是否有 var foo 的定义。</li>
+<li>函数形式参数是否有使用 foo 名称的。</li>
+<li>函数自身是否叫做 foo。</li>
+<li>回溯到上一级作用域，然后从 #1 重新开始。</li>
+</ol>
+<p><strong>-命名空间</strong></p>
+<p>只有一个全局作用域常会导致命名冲突。在js中，可以通过<em>匿名包装器（也就是自执行的匿名函数）</em>来创建命空间。这样不仅可以防止命名冲突，而且有利于程序的模块化。</p>
+<pre><code>(function() {
+    // 函数创建一个命名空间
+
+    window.foo = function() {
+        // 对外公开的函数，创建了闭包
+    };
+
+})(); // 立即执行此匿名函数
+</code></pre><hr>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h5 id="数组遍历和属性"><a href="#数组遍历和属性" class="headerlink" title="数组遍历和属性"></a>数组遍历和属性</h5><p>js中的数组是对象，但是一般不推荐使用for in循环遍历数组，因为for in循环会枚举原型链上所有属性，这时需要用hasOwnProperty去过滤，因此速度会很慢。</p>
+<p>推荐使用经典的for循环去遍历数组并缓存数组的length属性，以达到最佳性能。</p>
+<pre><code>var list = [1, 2, 3, 4, 5, ...... 100000000];
+for(var i = 0, l = list.length; i &lt; l; i++) {
+    console.log(list[i]);
+}
+</code></pre><p>length属性的getter方式会获得数组的长度，setter方式有可能截断数组：为length属性设置一个更小的值会截断数组，但是增大length属性不会对数组产生影响。</p>
+<h5 id="Array构造函数"><a href="#Array构造函数" class="headerlink" title="Array构造函数"></a>Array构造函数</h5><p>Array构造函数的参数有点复杂，因此总是推荐使用数组的字面语法[]来构造数组，代码可读性更好。</p>
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><h5 id="相等于比较"><a href="#相等于比较" class="headerlink" title="相等于比较"></a>相等于比较</h5><p>js有两种方式判断两个值是否相等：</p>
+<ol>
+<li><p>等于==</p>
+<p> js是弱类型语言，==操作符会为了比较两个值而进行强制类型转换。</p>
+<p> 强制类型转换规则较为复杂，可能导致难以跟踪的问题。此外强制类型转换也会带来性能消耗。因此==被认为是一种不好的编程习惯。</p>
+</li>
+<li><p>严格等于===</p>
+<p> 严格等于操作符不会进行强制类型转换。</p>
+<p> 用于比较对象时，比较的不是值是否相等，只有对象的同一个实例才被认为是相等的。</p>
+<pre><code>{} === {};                   // false
+new String(&apos;foo&apos;) === &apos;foo&apos;; // false
+new Number(10) === 10;       // false
+var foo = {};
+foo === foo;                 // true
+</code></pre></li>
+</ol>
+<p>因此建议总是使用严格等于操作符。如果类型需要转换，应该在比较之前进行显示转换，而不是使用语言本身复杂的强制转换规则。</p>
+<h5 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h5><p>typeof或许是js最大的一个设计缺陷。可以认为它只有一个功能：用以检测对象是否被定义或赋值。并不能检测对象类型。</p>
+<pre><code>typeof foo !== &apos;undefined&apos;
+</code></pre><p>上面代码会检测对象foo是否定义过，如果没有定义会抛出ReferenceError异常。</p>
+<p>强烈建议用Object.prototype.toString检测对象的类型。这是js标准文档给出的唯一一种获取[[Class]]值的方法。</p>
+<pre><code>Object.prototype.toString.call([])    // &quot;[object Array]&quot;
+Object.prototype.toString.call({})    // &quot;[object Object]&quot;
+Object.prototype.toString.call(2)    // &quot;[object Number]&quot;
+</code></pre><p>Object.prototype.toString返回一种标准格式字符串，所以上例可以通过slice截取指定位置的字符串</p>
+<pre><code>function is(type, obj) {
+    var clas = Object.prototype.toString.call(obj).slice(8, -1);
+    return obj !== undefined &amp;&amp; obj !== null &amp;&amp; clas === type;
+}
+
+is(&apos;String&apos;, &apos;test&apos;); // true
+is(&apos;String&apos;, new String(&apos;test&apos;)); // true
+</code></pre><h5 id="instanceof操作符"><a href="#instanceof操作符" class="headerlink" title="instanceof操作符"></a>instanceof操作符</h5><p>instanceof操作符用来比较两个操作数的构造函数，只有在比较自定义对象的时候才有意义，如果用于比较内置对象，则像typeof操作符一样意义不大。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/16/ES6-Promise对象初探/" rel="prev" title="ES6-Promise对象初探">
+                ES6-Promise对象初探 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/source/images/avatar.jpg"
+               alt="雨虹" />
+          <p class="site-author-name" itemprop="name">雨虹</p>
+          <p class="site-description motion-element" itemprop="description">最朴素的生活，最遥远的梦想</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/rainy-rainy" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象使用和属性"><span class="nav-number">1.0.1.</span> <span class="nav-text">对象使用和属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型"><span class="nav-number">1.0.2.</span> <span class="nav-text">原型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hasOwnProperty函数"><span class="nav-number">1.0.3.</span> <span class="nav-text">hasOwnProperty函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-in循环"><span class="nav-number">1.0.4.</span> <span class="nav-text">for in循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数声明与表达式"><span class="nav-number">2.0.1.</span> <span class="nav-text">函数声明与表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关于this"><span class="nav-number">2.0.2.</span> <span class="nav-text">关于this</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包和引用"><span class="nav-number">2.0.3.</span> <span class="nav-text">闭包和引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#arguments对象"><span class="nav-number">2.0.4.</span> <span class="nav-text">arguments对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数"><span class="nav-number">2.0.5.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用域与命名空间"><span class="nav-number">2.0.6.</span> <span class="nav-text">作用域与命名空间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数组遍历和属性"><span class="nav-number">3.0.1.</span> <span class="nav-text">数组遍历和属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Array构造函数"><span class="nav-number">3.0.2.</span> <span class="nav-text">Array构造函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-number">4.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#相等于比较"><span class="nav-number">4.0.1.</span> <span class="nav-text">相等于比较</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#typeof操作符"><span class="nav-number">4.0.2.</span> <span class="nav-text">typeof操作符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#instanceof操作符"><span class="nav-number">4.0.3.</span> <span class="nav-text">instanceof操作符</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">雨虹</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
