@@ -291,8 +291,7 @@
 
       
         
-          
-            <p>js中this的指向分为四种情况：</p>
+          <p>js中this的指向分为四种情况：</p>
 <ol>
 <li><p>全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 </p>
 <pre><code>foo();    
@@ -303,39 +302,12 @@
 <li><p>用new关键词调用的构造方法中，this指向新构造的对象。</p>
 <pre><code>new Foo();
 </code></pre></li>
-<li><p>通过call或apply函数显示设置this，this被显示设置为函数调用的第一个参数。</p>
-<pre><code>foo.call(obj,arg1,arg2);
-foo.apply(obj,[arg1,arg2]);
-</code></pre></li>
 </ol>
-<p>全局代码或者普通函数调用中的this指向全局对象，这其实是js设计的一个缺陷，常会导致误解。例如以下代码：</p>
-<pre><code>Foo.method = function() {
-    function test() {
-        // 这里的this指向全局对象，而非Foo对象
-    }
-    test();
-}
-</code></pre><p>如果确实需要在test中获取对Foo对象的引用，可以创建一个局部变量暂存Foo对象引用：</p>
-<pre><code>Foo.method = function() {
-    var that = this;
-    function test() {
-        // 使用that来指向Foo对象
-    }
-    test();
-}
-</code></pre><p>再看下面使用了函数表达式的例子：</p>
-<pre><code>var test = someObject.methodTest;
-test();    //这里的this指向全局对象而非someObject对象
-</code></pre><p>为了避免误解，当在确认函数中this中指向的时候，我们应该避免从函数定义处寻找答案，而应<strong>仅</strong>根据函数被调用的方式来确定。也就是说，函数里this的指向<strong>仅由其被调用的方式决定</strong>。</p>
-<p>具体来说，当看到以下代码：</p>
-<pre><code>obj.foo();
-</code></pre><p>就可以确定foo里的this指向obj对象。</p>
-<p>而对于如下代码：</p>
-<pre><code>foo();
-</code></pre><p>则可以确定foo里的this指向全局对象，而与函数foo的定义方式或者闭包等没有关系。（此处不考虑bind及严格模式）。</p>
-<p>this是由被调用方式决定而跟定义方式无关，这使得this可以被改变，增加了编程的灵活性。</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/17/js中this指向问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
