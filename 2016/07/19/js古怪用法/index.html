@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -87,11 +87,7 @@
 <meta name="description" content="学习js已有一段时间，再读JavaScript 秘密花园。
 
 对象对象使用和属性删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。
-原型js不包含传统的类继承模型，而是使用prototype原型继承模型。
-  function Foo() {
-    this.value = 42;
-}
-Foo.prototype">
+原型js不包含传统的类继承模型，而是使用prototype原型继承模型。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js古怪用法">
 <meta property="og:url" content="http://yoursite.com/2016/07/19/js古怪用法/index.html">
@@ -99,29 +95,21 @@ Foo.prototype">
 <meta property="og:description" content="学习js已有一段时间，再读JavaScript 秘密花园。
 
 对象对象使用和属性删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。
-原型js不包含传统的类继承模型，而是使用prototype原型继承模型。
-  function Foo() {
-    this.value = 42;
-}
-Foo.prototype">
-<meta property="og:updated_time" content="2016-08-19T09:46:51.000Z">
+原型js不包含传统的类继承模型，而是使用prototype原型继承模型。">
+<meta property="og:updated_time" content="2016-08-21T15:22:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js古怪用法">
 <meta name="twitter:description" content="学习js已有一段时间，再读JavaScript 秘密花园。
 
 对象对象使用和属性删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。
-原型js不包含传统的类继承模型，而是使用prototype原型继承模型。
-  function Foo() {
-    this.value = 42;
-}
-Foo.prototype">
+原型js不包含传统的类继承模型，而是使用prototype原型继承模型。">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -309,8 +297,9 @@ Foo.prototype">
       
         <p>学习js已有一段时间，再读<a href="http://www.jb51.net/onlineread/JavaScript-Garden-CN/" target="_blank" rel="external">JavaScript 秘密花园</a>。</p>
 <hr>
-<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><h5 id="对象使用和属性"><a href="#对象使用和属性" class="headerlink" title="对象使用和属性"></a>对象使用和属性</h5><p>删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。</p>
-<h5 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h5><p>js不包含传统的类继承模型，而是使用prototype原型继承模型。</p>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><h4 id="对象使用和属性"><a href="#对象使用和属性" class="headerlink" title="对象使用和属性"></a>对象使用和属性</h4><p>删除属性：唯一方法是用delete操作符；设置属性为null或者undefined并不能真正的删除属性，而只是移除了属性和值的关联。</p>
+<h4 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h4><p>js不包含传统的类继承模型，而是使用prototype原型继承模型。</p>
+<a id="more"></a>
 <pre><code>  function Foo() {
     this.value = 42;
 }
@@ -351,7 +340,7 @@ foo.bar; // 1
 foo.hasOwnProperty(&apos;bar&apos;); // false
 foo.hasOwnProperty(&apos;goo&apos;); // true
 </code></pre><p>使用for…in loop遍历对象属性时推荐使用hasOwnProperty方法来避免原型对象扩展带来的干扰。</p>
-<h5 id="for-in循环"><a href="#for-in循环" class="headerlink" title="for in循环"></a>for in循环</h5><p>同in操作符一样，for in循环同样在查找对象属性时遍历整个原型链。</p>
+<h4 id="for-in循环"><a href="#for-in循环" class="headerlink" title="for in循环"></a>for in循环</h4><p>同in操作符一样，for in循环同样在查找对象属性时遍历整个原型链。</p>
 <pre><code>// 修改 Object.prototype
 Object.prototype.bar = 1;
 
@@ -368,7 +357,7 @@ for(var i in foo) {
 }
 </code></pre><p>这是唯一正确的写法。比如广泛使用的库Prototype就扩展了原生的js对象（不推荐该种破坏封装的做法）。因此，当使用这种类库时，如果不使用hasOwnProperty过滤的for in就难免会出现问题。</p>
 <p>因此推荐总是使用hasOwnProperty，不要对代码的运行环境做任何假设，不要假设原生对象是否被扩展了。</p>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h5 id="函数声明与表达式"><a href="#函数声明与表达式" class="headerlink" title="函数声明与表达式"></a>函数声明与表达式</h5><p>函数也是一个对象，因此可以作为参数传递或者作为返回值，一个常见的做法是把匿名函数作为回调函数传递到异步函数中。</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="函数声明与表达式"><a href="#函数声明与表达式" class="headerlink" title="函数声明与表达式"></a>函数声明与表达式</h4><p>函数也是一个对象，因此可以作为参数传递或者作为返回值，一个常见的做法是把匿名函数作为回调函数传递到异步函数中。</p>
 <p>有两种定义函数的方式：函数声明和函数表达式。主要区别是函数声明创建的方法会在执行前被解析，因此它存在于当前上下文的任何一个地方，即使在函数定义体的上面调用也是完全正确的。</p>
 <pre><code>//函数声明
 foo(); // 正常运行，因为foo在代码运行前已经被创建
@@ -379,7 +368,7 @@ foo; // &apos;undefined&apos;
 foo(); // 出错：TypeError
 var foo = function() {};
 </code></pre><p>var定义了一个声明语句，对变量foo的解析是在运行之前，因此<em>foo变量在代码时已经被定义过</em>了，但是由于<em>赋值语句只在运行时执行</em>，因此在相应代码执行之前，foo的值为缺省undefined。</p>
-<h5 id="关于this"><a href="#关于this" class="headerlink" title="关于this"></a>关于this</h5><p>this的指向有五种情况：</p>
+<h4 id="关于this"><a href="#关于this" class="headerlink" title="关于this"></a>关于this</h4><p>this的指向有五种情况：</p>
 <ol>
 <li>全局范围内：指向全局对象。</li>
 <li><p>函数调用：</p>
@@ -419,7 +408,7 @@ Bar.prototype = Foo.prototype;
 
 new Bar().method();
 </code></pre><p>当 method 被调用时，this 将会指向 Bar 的实例对象。</p>
-<h5 id="闭包和引用"><a href="#闭包和引用" class="headerlink" title="闭包和引用"></a>闭包和引用</h5><p>闭包是js一个非常重要的特性，使得当前作用域可以访问外部作用域中的变量。函数是js中唯一拥有自身作用域的结构，因此闭包的创建依赖于函数。</p>
+<h4 id="闭包和引用"><a href="#闭包和引用" class="headerlink" title="闭包和引用"></a>闭包和引用</h4><p>闭包是js一个非常重要的特性，使得当前作用域可以访问外部作用域中的变量。函数是js中唯一拥有自身作用域的结构，因此闭包的创建依赖于函数。</p>
 <p>使用闭包可以模拟私有变量：</p>
 <pre><code>function Counter(start) {
     var count = start;
@@ -469,7 +458,7 @@ foo.hack = function() {
         }
     })(i), 1000)
 }
-</code></pre><h5 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h5><p>js中每个函数都能访问一个特别变量：arguments。这个变量维护所有传递到这个函数的参数列表。</p>
+</code></pre><h4 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h4><p>js中每个函数都能访问一个特别变量：arguments。这个变量维护所有传递到这个函数的参数列表。</p>
 <p>arguments变量有length属性，但是它不是一个数组，实际上它是一个对象（Object）。</p>
 <p>可以使用for对其循环遍历，但是不能使用标准的数组方法，如push，pop或slice等。为了更好的使用数组方法，可以将其转换为数组。下面的代码会创建一个数组，包含所有arguments对象中的元素：</p>
 <pre><code>Array.prototype.slice.call(arguments);
@@ -495,7 +484,7 @@ function bar(a, b, c) {
 }
 foo(1, 2, 3);
 </code></pre><p>arguments.calle属性指向调用函数，会影响js引擎的性能。</p>
-<h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h5><p><em>通过new 关键字调用的函数都是构造函数。</em></p>
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p><em>通过new 关键字调用的函数都是构造函数。</em></p>
 <p>在构造函数内部，this指向新创建的对象，这个新创建对象的prototype被指向到构造函数的prototype。</p>
 <p>如果被调用的函数没有显式的return表达式，则<em>隐式的会返回this对象</em>——也就是新创建的对象。</p>
 <pre><code>function Foo() {
@@ -522,7 +511,7 @@ function Test() {
     };
 }
 new Test(); // 返回创建的对象
-</code></pre><h5 id="作用域与命名空间"><a href="#作用域与命名空间" class="headerlink" title="作用域与命名空间"></a>作用域与命名空间</h5><p>js不支持块级作用域，只支持函数作用域。</p>
+</code></pre><h4 id="作用域与命名空间"><a href="#作用域与命名空间" class="headerlink" title="作用域与命名空间"></a>作用域与命名空间</h4><p>js不支持块级作用域，只支持函数作用域。</p>
 <pre><code>function test() { // 一个作用域
     for(var i = 0; i &lt; 10; i++) { // 不是一个作用域
         // count
@@ -612,15 +601,15 @@ if (!SomeImportantThing) {
 
 })(); // 立即执行此匿名函数
 </code></pre><hr>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h5 id="数组遍历和属性"><a href="#数组遍历和属性" class="headerlink" title="数组遍历和属性"></a>数组遍历和属性</h5><p>js中的数组是对象，但是一般不推荐使用for in循环遍历数组，因为for in循环会枚举原型链上所有属性，这时需要用hasOwnProperty去过滤，因此速度会很慢。</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="数组遍历和属性"><a href="#数组遍历和属性" class="headerlink" title="数组遍历和属性"></a>数组遍历和属性</h4><p>js中的数组是对象，但是一般不推荐使用for in循环遍历数组，因为for in循环会枚举原型链上所有属性，这时需要用hasOwnProperty去过滤，因此速度会很慢。</p>
 <p>推荐使用经典的for循环去遍历数组并缓存数组的length属性，以达到最佳性能。</p>
 <pre><code>var list = [1, 2, 3, 4, 5, ...... 100000000];
 for(var i = 0, l = list.length; i &lt; l; i++) {
     console.log(list[i]);
 }
 </code></pre><p>length属性的getter方式会获得数组的长度，setter方式有可能截断数组：为length属性设置一个更小的值会截断数组，但是增大length属性不会对数组产生影响。</p>
-<h5 id="Array构造函数"><a href="#Array构造函数" class="headerlink" title="Array构造函数"></a>Array构造函数</h5><p>Array构造函数的参数有点复杂，因此总是推荐使用数组的字面语法[]来构造数组，代码可读性更好。</p>
-<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><h5 id="相等于比较"><a href="#相等于比较" class="headerlink" title="相等于比较"></a>相等于比较</h5><p>js有两种方式判断两个值是否相等：</p>
+<h4 id="Array构造函数"><a href="#Array构造函数" class="headerlink" title="Array构造函数"></a>Array构造函数</h4><p>Array构造函数的参数有点复杂，因此总是推荐使用数组的字面语法[]来构造数组，代码可读性更好。</p>
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><h4 id="相等于比较"><a href="#相等于比较" class="headerlink" title="相等于比较"></a>相等于比较</h4><p>js有两种方式判断两个值是否相等：</p>
 <ol>
 <li><p>等于==</p>
 <p> js是弱类型语言，==操作符会为了比较两个值而进行强制类型转换。</p>
@@ -637,7 +626,7 @@ foo === foo;                 // true
 </code></pre></li>
 </ol>
 <p>因此建议总是使用严格等于操作符。如果类型需要转换，应该在比较之前进行显示转换，而不是使用语言本身复杂的强制转换规则。</p>
-<h5 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h5><p>typeof或许是js最大的一个设计缺陷。可以认为它只有一个功能：用以检测对象是否被定义或赋值。并不能检测对象类型。</p>
+<h4 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h4><p>typeof或许是js最大的一个设计缺陷。可以认为它只有一个功能：用以检测对象是否被定义或赋值。并不能检测对象类型。</p>
 <pre><code>typeof foo !== &apos;undefined&apos;
 </code></pre><p>上面代码会检测对象foo是否定义过，如果没有定义会抛出ReferenceError异常。</p>
 <p>强烈建议用Object.prototype.toString检测对象的类型。这是js标准文档给出的唯一一种获取[[Class]]值的方法。</p>
@@ -652,7 +641,7 @@ Object.prototype.toString.call(2)    // &quot;[object Number]&quot;
 
 is(&apos;String&apos;, &apos;test&apos;); // true
 is(&apos;String&apos;, new String(&apos;test&apos;)); // true
-</code></pre><h5 id="instanceof操作符"><a href="#instanceof操作符" class="headerlink" title="instanceof操作符"></a>instanceof操作符</h5><p>instanceof操作符用来比较两个操作数的构造函数，只有在比较自定义对象的时候才有意义，如果用于比较内置对象，则像typeof操作符一样意义不大。</p>
+</code></pre><h4 id="instanceof操作符"><a href="#instanceof操作符" class="headerlink" title="instanceof操作符"></a>instanceof操作符</h4><p>instanceof操作符用来比较两个操作数的构造函数，只有在比较自定义对象的时候才有意义，如果用于比较内置对象，则像typeof操作符一样意义不大。</p>
 
       
     </div>
@@ -758,7 +747,7 @@ is(&apos;String&apos;, new String(&apos;test&apos;)); // true
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -808,7 +797,7 @@ is(&apos;String&apos;, new String(&apos;test&apos;)); // true
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象使用和属性"><span class="nav-number">1.0.1.</span> <span class="nav-text">对象使用和属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型"><span class="nav-number">1.0.2.</span> <span class="nav-text">原型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hasOwnProperty函数"><span class="nav-number">1.0.3.</span> <span class="nav-text">hasOwnProperty函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-in循环"><span class="nav-number">1.0.4.</span> <span class="nav-text">for in循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数声明与表达式"><span class="nav-number">2.0.1.</span> <span class="nav-text">函数声明与表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关于this"><span class="nav-number">2.0.2.</span> <span class="nav-text">关于this</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包和引用"><span class="nav-number">2.0.3.</span> <span class="nav-text">闭包和引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#arguments对象"><span class="nav-number">2.0.4.</span> <span class="nav-text">arguments对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数"><span class="nav-number">2.0.5.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用域与命名空间"><span class="nav-number">2.0.6.</span> <span class="nav-text">作用域与命名空间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数组遍历和属性"><span class="nav-number">3.0.1.</span> <span class="nav-text">数组遍历和属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Array构造函数"><span class="nav-number">3.0.2.</span> <span class="nav-text">Array构造函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-number">4.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#相等于比较"><span class="nav-number">4.0.1.</span> <span class="nav-text">相等于比较</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#typeof操作符"><span class="nav-number">4.0.2.</span> <span class="nav-text">typeof操作符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#instanceof操作符"><span class="nav-number">4.0.3.</span> <span class="nav-text">instanceof操作符</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对象使用和属性"><span class="nav-number">1.1.</span> <span class="nav-text">对象使用和属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型"><span class="nav-number">1.2.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hasOwnProperty函数"><span class="nav-number">1.2.1.</span> <span class="nav-text">hasOwnProperty函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for-in循环"><span class="nav-number">1.3.</span> <span class="nav-text">for in循环</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数声明与表达式"><span class="nav-number">2.1.</span> <span class="nav-text">函数声明与表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于this"><span class="nav-number">2.2.</span> <span class="nav-text">关于this</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包和引用"><span class="nav-number">2.3.</span> <span class="nav-text">闭包和引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#arguments对象"><span class="nav-number">2.4.</span> <span class="nav-text">arguments对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数"><span class="nav-number">2.5.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域与命名空间"><span class="nav-number">2.6.</span> <span class="nav-text">作用域与命名空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组遍历和属性"><span class="nav-number">3.1.</span> <span class="nav-text">数组遍历和属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array构造函数"><span class="nav-number">3.2.</span> <span class="nav-text">Array构造函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-number">4.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#相等于比较"><span class="nav-number">4.1.</span> <span class="nav-text">相等于比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof操作符"><span class="nav-number">4.2.</span> <span class="nav-text">typeof操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof操作符"><span class="nav-number">4.3.</span> <span class="nav-text">instanceof操作符</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -841,7 +830,7 @@ is(&apos;String&apos;, new String(&apos;test&apos;)); // true
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
