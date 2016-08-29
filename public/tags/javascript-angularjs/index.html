@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,43 +84,15 @@
 
 
 
-<meta name="description" content="js中this的指向分为四种情况：
-
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
-
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js中this指向问题">
-<meta property="og:url" content="http://yoursite.com/2016/08/17/js中this指向问题/index.html">
+<meta name="description" content="最朴素的生活，最遥远的梦想">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Over the Rainbow">
+<meta property="og:url" content="http://yoursite.com/tags/javascript-angularjs/index.html">
 <meta property="og:site_name" content="Over the Rainbow">
-<meta property="og:description" content="js中this的指向分为四种情况：
-
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
-
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
-<meta property="og:updated_time" content="2016-08-21T15:26:41.000Z">
+<meta property="og:description" content="最朴素的生活，最遥远的梦想">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中this指向问题">
-<meta name="twitter:description" content="js中this的指向分为四种情况：
-
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
-
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
+<meta name="twitter:title" content="Over the Rainbow">
+<meta name="twitter:description" content="最朴素的生活，最遥远的梦想">
 
 
 
@@ -141,9 +113,9 @@ new Foo();">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/17/js中this指向问题/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/javascript-angularjs/"/>
 
-  <title> js中this指向问题 | Over the Rainbow </title>
+  <title> 标签: javascript angularjs | Over the Rainbow </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,7 +136,7 @@ new Foo();">
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,170 +224,74 @@ new Foo();">
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        javascript angularjs
+        <small>标签</small>
+      </h2>
+    </div>
 
     
-      <header class="post-header">
+      
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/07/22/AngularJS系列（一）：MVC/" itemprop="url">
               
-                js中this指向问题
+                <span itemprop="name">AngularJS系列（一）：MVC</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T22:48:05+08:00" content="2016-08-17">
-              2016-08-17
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-07-22T00:00:00+08:00"
+              content="2016-07-22" >
+          07-22
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>js中this的指向分为四种情况：</p>
-<ol>
-<li><p>全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 </p>
-<pre><code>foo();    
-</code></pre></li>
-<li><p>调用对象的方法时，this指向该对象。</p>
-<pre><code>obj.foo();
-</code></pre></li>
-<li><p>用new关键词调用的构造方法中，this指向新构造的对象。</p>
-<pre><code>new Foo();
-</code></pre></li>
-</ol>
-<a id="more"></a>
-<ol>
-<li><p>通过call或apply函数显示设置this，this被显示设置为函数调用的第一个参数。</p>
-<pre><code>foo.call(obj,arg1,arg2);
-foo.apply(obj,[arg1,arg2]);
-</code></pre></li>
-</ol>
-<p>全局代码或者普通函数调用中的this指向全局对象，这其实是js设计的一个缺陷，常会导致误解。例如以下代码：</p>
-<pre><code>Foo.method = function() {
-    function test() {
-        // 这里的this指向全局对象，而非Foo对象
-    }
-    test();
-}
-</code></pre><p>如果确实需要在test中获取对Foo对象的引用，可以创建一个局部变量暂存Foo对象引用：</p>
-<pre><code>Foo.method = function() {
-    var that = this;
-    function test() {
-        // 使用that来指向Foo对象
-    }
-    test();
-}
-</code></pre><p>再看下面使用了函数表达式的例子：</p>
-<pre><code>var test = someObject.methodTest;
-test();    //这里的this指向全局对象而非someObject对象
-</code></pre><p>为了避免误解，当在确认函数中this中指向的时候，我们应该避免从函数定义处寻找答案，而应<strong>仅</strong>根据函数被调用的方式来确定。也就是说，函数里this的指向<strong>仅由其被调用的方式决定</strong>。</p>
-<p>具体来说，当看到以下代码：</p>
-<pre><code>obj.foo();
-</code></pre><p>就可以确定foo里的this指向obj对象。</p>
-<p>而对于如下代码：</p>
-<pre><code>foo();
-</code></pre><p>则可以确定foo里的this指向全局对象，而与函数foo的定义方式或者闭包等没有关系。（此处不考虑bind及严格模式）。</p>
-<p>this是由被调用方式决定而跟定义方式无关，这使得this可以被改变，增加了编程的灵活性。</p>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/08/16/ES6-Promise对象初探/" rel="next" title="ES6-Promise对象初探">
-                <i class="fa fa-chevron-left"></i> ES6-Promise对象初探
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/22/AngularJS系列（四）：指令/" rel="prev" title="AngularJS系列（四）：指令">
-                AngularJS系列（四）：指令 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
+    
       
-    </div>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/07/22/AngularJS系列（二）：模块化/" itemprop="url">
+              
+                <span itemprop="name">AngularJS系列（二）：模块化</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-07-22T00:00:00+08:00"
+              content="2016-07-22" >
+          07-22
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
   </div>
+
+  
 
 
           </div>
@@ -423,10 +299,6 @@ test();    //这里的this指向全局对象而非someObject对象
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -446,17 +318,8 @@ test();    //这里的this指向全局对象而非someObject对象
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/source/images/avatar.jpg"
@@ -510,17 +373,6 @@ test();    //这里的this指向全局对象而非someObject对象
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -617,10 +469,6 @@ test();    //这里的this指向全局对象而非someObject对象
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 

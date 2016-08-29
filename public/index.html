@@ -248,6 +248,462 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/28/CSS实现居中/" itemprop="url">
+                  CSS实现居中
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-28T17:07:32+08:00" content="2016-08-28">
+              2016-08-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h4><h5 id="inline元素"><a href="#inline元素" class="headerlink" title="inline元素"></a>inline元素</h5><p>在块级父元素上设置text-align:center</p>
+<pre><code>.center-children {
+  text-align: center;
+}
+</code></pre><h5 id="block元素"><a href="#block元素" class="headerlink" title="block元素"></a>block元素</h5><ol>
+<li><p>设置该块级元素的margin-left和margin-right为auto（首先需要设置该元素的宽度，否则将撑满整个屏幕宽度）。：</p>
+<pre><code>.center-me {
+  margin: 0 auto;
+  width: 200px;
+}    
+</code></pre></li>
+<li><p>将block块display设置为inline-block，在块级父元素上设置text-align:center。</p>
+<pre><code>&lt;main class=&quot;inline-block-center&quot;&gt;
+  &lt;div&gt;
+    I&apos;m an element that is block-like with my siblings and we&apos;re centered in a row.
+  &lt;/div&gt;
+  &lt;div&gt;
+    I&apos;m an element that is block-like with my siblings and we&apos;re centered in a row. I have more content in me than my siblings do.
+  &lt;/div&gt;
+  &lt;div&gt;
+    I&apos;m an element that is block-like with my siblings and we&apos;re centered in a row.
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre><p> CSS样式：</p>
+<pre><code>.inline-block-center {
+  text-align: center;
+}
+.inline-block-center div {
+  display: inline-block;
+  text-align: left;
+}
+</code></pre></li>
+</ol>
+<ol>
+<li><p>使用弹性盒布局</p>
+<pre><code>&lt;main class=&quot;flex-center&quot;&gt;
+  &lt;div&gt;
+    I&apos;m an element that is block-like with my siblings and we&apos;re centered in a row.
+  &lt;/div&gt;
+  &lt;div&gt;
+    I&apos;m an element that is block-like with my siblings and we&apos;re centered in a row. I have more content in me than my siblings do.
+  &lt;/div&gt;
+  &lt;div&gt;
+    I&apos;m an element that is block-like with my siblings and we&apos;re centered in a row.
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre><p> CSS样式：</p>
+<pre><code>.flex-center {
+  display: flex;
+  justify-content: center;
+}
+</code></pre></li>
+</ol>
+<h4 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h4><p>垂直居中需要使用一些技巧</p>
+<h5 id="inline元素、文本"><a href="#inline元素、文本" class="headerlink" title="inline元素、文本"></a>inline元素、文本</h5><ol>
+<li><p>设置padding<br> 对于行内元素，只要padding-top和padding-bottom相等即可实现居中。</p>
+<pre><code>&lt;main&gt;
+  &lt;a href=&quot;#0&quot;&gt;We&apos;re&lt;/a&gt;
+  &lt;a href=&quot;#0&quot;&gt;Centered&lt;/a&gt;
+  &lt;a href=&quot;#0&quot;&gt;Bits of&lt;/a&gt;
+  &lt;a href=&quot;#0&quot;&gt;Text&lt;/a&gt;
+&lt;/main&gt;
+</code></pre><p> CSS样式：</p>
+<pre><code>main a {
+  padding: 40px 30px;
+}
+</code></pre><p> 该方法对于单行或者多行内联元素都行得通，但是如果因为某些原因不能设置padding，要使用不同的方法。</p>
+</li>
+<li><p>单行文本</p>
+<p> 使用一个trick：设置line-height和height相等，就可以垂直居中文本。</p>
+<pre><code>&lt;main&gt;
+  &lt;div&gt;
+    I&apos;m a centered line.
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre><p> CSS样式：</p>
+<pre><code>ain div {
+ height: 100px;
+ line-height: 100px;
+}
+</code></pre></li>
+</ol>
+<pre><code>使用该方法时，一定要确保文本不会换行，否则不是单行将无效果。
+</code></pre><ol>
+<li><p>多行文本</p>
+<p> 使用弹性盒布局</p>
+<pre><code>&lt;div class=&quot;flex-center&quot;&gt;
+  &lt;p&gt;I&apos;m vertically centered multiple lines of text in a flexbox container.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p> CSS样式：</p>
+<pre><code>.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    height: 200px;
+}
+</code></pre><p> 记住一定要设置父容器的高度。</p>
+</li>
+<li><p>伪元素</p>
+<p> 如果上述方法都不可行，可以使用伪元素来解决，添加伪元素，设置高度为父级容器高度，然后为文本添加vertical-middle: middle.</p>
+<pre><code>&lt;div class=&quot;ghost-center&quot;&gt;
+  &lt;p&gt;I&apos;m vertically centered multiple lines of text in a container. Centered with a ghost pseudo element&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p> CSS样式：</p>
+<pre><code>.ghost-center::before {
+  content: &quot; &quot;;
+  display: inline-block;
+  height: 100%;
+  width: 1%;
+  vertical-align: middle;
+}
+.ghost-center p {
+  display: inline-block;
+  vertical-align: middle;
+}
+</code></pre></li>
+</ol>
+<h5 id="block元素-1"><a href="#block元素-1" class="headerlink" title="block元素"></a>block元素</h5><ol>
+<li><p>通过绝对定位实现居中（该方法同样可用于水平居中）。</p>
+<ul>
+<li><p>高度已知</p>
+<pre><code>.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 50%;
+  height: 100px;
+  margin-top: -50px; 
+}
+</code></pre></li>
+<li><p>高度未知, 利用CSS3变形</p>
+<pre><code>.parent {
+    position: relative;
+}
+.child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>使用Flex弹性盒布局</p>
+<pre><code>.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+</code></pre></li>
+</ol>
+<h4 id="水平垂直同时居中"><a href="#水平垂直同时居中" class="headerlink" title="水平垂直同时居中"></a>水平垂直同时居中</h4><ol>
+<li><p>绝对定位居中</p>
+<ul>
+<li><p>高度已知</p>
+<pre><code>.parent {
+  position: relative;
+}
+
+.child {
+  width: 300px;
+  height: 100px;
+  padding: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: -70px 0 0 -170px;    //注意padding值
+}
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<pre><code>* 高度未知
+
+        .parent {
+          position: relative;
+        }
+        .child {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+</code></pre><ol>
+<li><p>使用Flex弹性盒布局</p>
+<pre><code>.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/22/AngularJS系列（四）：指令/" itemprop="url">
+                  AngularJS系列（四）：指令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-22T00:00:00+08:00" content="2016-08-22">
+              2016-08-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>指令是AngularJS的四大特性中最复杂的一个特性。</p>
+<h4 id="最简单的指令hello"><a href="#最简单的指令hello" class="headerlink" title="最简单的指令hello"></a>最简单的指令hello</h4><p>使用AngularJS时应避免在Controller等中操作DOM，不符合设计思想。如果要操作DOM，可以在指令中进行。下面是一个最简单的指令hello使用方式。</p>
+<p>HTML：</p>
+<pre><code>&lt;hello&gt;&lt;/hello&gt;
+</code></pre><p>JS：</p>
+<pre><code>var myModule=angular.module(&quot;myModule&quot;,[]);
+myModule.directive(&quot;hello&quot;,function(){
+      return {
+        restrict: &apos;AE&apos;,
+        template: &apos;&lt;div&gt;Hi everyone!&lt;/div&gt;&apos;,
+        replace: true
+      }
+});
+</code></pre><h5 id="restrict"><a href="#restrict" class="headerlink" title="restrict"></a>restrict</h5><p>配置项restrict表示匹配模式，一共有四个属性“AEMC” ，A:attribute, E:element, M:comment, C:class。下面是这四种匹配模式对应的元素写法，推荐使用前两种方式，具体来说当使用现有标签时用attribute模式，新建标签使用element模式。本例使用第一种element匹配模式。</p>
+<pre><code>&lt;hello&gt;&lt;/hello&gt;
+&lt;div hello&gt;&lt;/div&gt;
+&lt;!-- directive:hello --&gt;        &lt;!-- 注意中间的空格 --&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div class=&quot;hello&quot;&gt;&lt;/div&gt;      
+</code></pre><h5 id="template"><a href="#template" class="headerlink" title="template"></a>template</h5><p>配置项template表示最终要显示出来的html标签，显然采用这种在js中编写模板的方式在编写和修改方面都不是很方便，AngularJS给我们提供了另外一个配置项templateUrl，采用这个配置项切出独立的html代码，就不用将html代码写到js中。</p>
+<pre><code>templateUrl: &apos;hello.html&apos;
+</code></pre><p>除此之外，AngularJS还提供了templateCache配置项，当我们编写的模板不仅仅在hello指令中使用，还需要在其他地方使用，可以使用templateCache将模板缓存起来，让多个指令使用。</p>
+<h5 id="嵌套：replace-amp-transclude"><a href="#嵌套：replace-amp-transclude" class="headerlink" title="嵌套：replace &amp; transclude"></a>嵌套：replace &amp; transclude</h5><p>replace：</p>
+<pre><code>var myModule=angular.module(&quot;myModule&quot;,[]);
+myModule.directive(&quot;hello&quot;,function(){
+      return {
+        restrict: &apos;AE&apos;,
+        replace: true,
+        template: &apos;&lt;div&gt;Hi everyone!&lt;/div&gt;&apos;,
+      }
+});
+</code></pre><p>使用replace时，下面代码中嵌套的内容将不会显示出来</p>
+<pre><code>&lt;hello&gt;
+    &lt;div&gt;这是嵌套的内容！&lt;/div&gt;
+&lt;/hello&gt;
+</code></pre><p>如果需要嵌套，要使用transclude配置项：      </p>
+<p>transclude:</p>
+<pre><code>var myModule=angular.module(&quot;myModule&quot;,[]);
+myModule.directive(&quot;hello&quot;,function(){
+      return {
+        restrict: &apos;AE&apos;,
+        transclude: true,
+        template: &apos;&lt;div&gt;Hi everyone!&lt;div ng-transclude&gt;这是嵌套内容！&lt;/div&gt;&lt;/div&gt;&apos;
+      }
+});
+</code></pre><h4 id="指令运行：compile-amp-link"><a href="#指令运行：compile-amp-link" class="headerlink" title="指令运行：compile &amp; link"></a>指令运行：compile &amp; link</h4><p>指令运行需要三个阶段：加载——编译——链接</p>
+<pre><code>var myModule=angular.module(&quot;myModule&quot;,[]);
+myModule.directive(&quot;hello&quot;,function(){
+      return {
+        restrict: &apos;AE&apos;,
+        replace: true,
+        template: &apos;&lt;div&gt;Hi everyone!&lt;/div&gt;&apos;,
+        compile: function(){
+        }
+        link: function(){
+        }
+      }
+});
+</code></pre><ol>
+<li>加载<ul>
+<li>加载angular.js，找到ng-app指令，确定应用边界</li>
+</ul>
+</li>
+<li>编译<ul>
+<li>遍历DOM，找到所有指令</li>
+<li>根据指令代码中的directive、replace、transclude转换DOM结构</li>
+<li>存在自定义compile函数则调用(调用自定义compile时还要调用内置compile，否则会被覆盖，因此一般不会自定义compile函数)</li>
+</ul>
+</li>
+<li>链接<ul>
+<li>对每条指令运行自定义link函数 </li>
+<li>link函数一般用来操作DOM、绑定事件监听器</li>
+</ul>
+</li>
+</ol>
+<h4 id="指令和控制器之间的交互"><a href="#指令和控制器之间的交互" class="headerlink" title="指令和控制器之间的交互"></a>指令和控制器之间的交互</h4><p>ng-controller</p>
+<h4 id="指令和指令之间的交互"><a href="#指令和指令之间的交互" class="headerlink" title="指令和指令之间的交互"></a>指令和指令之间的交互</h4><h4 id="scope类型和独立scope"><a href="#scope类型和独立scope" class="headerlink" title="scope类型和独立scope"></a>scope类型和独立scope</h4><h4 id="内置指令"><a href="#内置指令" class="headerlink" title="内置指令"></a>内置指令</h4><h4 id="第三方指令库：angular-ui"><a href="#第三方指令库：angular-ui" class="headerlink" title="第三方指令库：angular-ui"></a>第三方指令库：angular-ui</h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/17/js中this指向问题/" itemprop="url">
                   js中this指向问题
                 </a>
@@ -462,6 +918,395 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/22/AngularJS系列（一）：MVC/" itemprop="url">
+                  AngularJS系列（一）：MVC
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-22T00:00:00+08:00" content="2016-07-22">
+              2016-07-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>AngularJS是一个前端MVC框架，采用MVC有以下几个目的：</p>
+<ol>
+<li>切分职责</li>
+<li>复用</li>
+<li>便于后期维护</li>
+</ol>
+<p>总的来说，MVC是一种手段，主要是为了实现模块化和复用。</p>
+<p>抛开AngularJS，前端MVC框架都会遭遇以下困难：；</p>
+<ol>
+<li>浏览器首先加载脚本，之后再JIT编译执行。因此必须等待整个页面加载完成才能操作DOM</li>
+<li>js没有提供机制来解决多个文件之间的依赖问题，需要自己解决</li>
+<li>js的原型继承也为前端编程带来很多困难</li>
+</ol>
+<p>AngularJS实现MVC有以下几种方式：</p>
+<p><img src="source/images/2016-07-22-1.png" alt="image"></p>
+<p>一个控制器控制多个视图，适用于小型项目</p>
+<p><img src="source/images/2016-07-22-2.png" alt="image"></p>
+<p>一个控制器只负责一个视图</p>
+<p>如果控制器1和控制器2实现相同的内容，可以将公共部分作为一个服务service，不要采用继承的方式：</p>
+<p><img src="source/images/2016-07-22-3.png" alt="image"><br><img src="source/images/2016-07-22-4.png" alt="image"></p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html ng-app&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div ng-controller=&quot;HelloAngular&quot;&gt;
+      &lt;input ng-model=&quot;greeting.text&quot; /&gt;
+    &lt;p&gt;{{greeting.text}},Angular&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;script src=&quot;js/angular-1.3.0.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;HelloAngular_MVC.js&quot;&gt;&lt;/script&gt;    
+&lt;/html&gt;
+</code></pre><p>ng-controller赋值的HelloAngular函数就是Controller。View是页面上我们看到的东西，本例中就是</p><p>标签。</p><p>标签中内容是数据模型Model。</p>
+<h5 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h5><p>使用Controller要注意以下几点：</p>
+<ol>
+<li>不要试图复制Controller,一个Controller一般只负责一小块视图</li>
+<li>不要在Controller里操作DOM</li>
+<li>不要在Controller里做数据格式化，ng有很好用的表单控件</li>
+<li>不要在Controller里做数据过滤操作，ng有$filter服务</li>
+<li>应尽量避免Controller之间的互相调用，因为这是一种强耦合，Controller之间的交互通过事件进行</li>
+</ol>
+<h5 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h5><p>通过ng-model指令来绑定</p>
+<pre><code>&lt;input ng-model=&quot;greeting.text&quot; /&gt;
+&lt;p&gt;{{greeting.text}},Angular&lt;/p&gt;
+</code></pre><h5 id="View"><a href="#View" class="headerlink" title="View"></a>View</h5><h5 id="scope"><a href="#scope" class="headerlink" title="$scope"></a>$scope</h5><p>AngularJS的MVC是通过$scope来实现的。$scope是MVC和实现双向数据绑定的基础</p>
+<ol>
+<li>$scope是表达式的执行环境（作用域）</li>
+<li>$scope是一个树形结构，与DOM结构平行，通过这种结构可以实现子标签继承父标签的属性和方法</li>
+<li>提供了一些方法$watch()/$apply()对数据进行监控</li>
+<li>每一个angular应用只有一个根$scope对象，一般位于ng-app上</li>
+<li>$scope可以向上或向下传播事件</li>
+</ol>
+<p>#### </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/22/AngularJS系列（三）：双向数据绑定/" itemprop="url">
+                  AngularJS系列（三）：双向数据绑定
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-22T00:00:00+08:00" content="2016-07-22">
+              2016-07-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>双向数据绑定是AngularJS中一个非常吸引人的特性，极大方便了form表单的交互实现。顾名思义，双向数据绑定存在从数据模型和视图之间的双向绑定：</p>
+<ul>
+<li>控制器修改数据模型后，数据模型的变更会反映到视图上</li>
+<li>视图上发生了数据的变化，能够自动同步到模型上</li>
+</ul>
+<h4 id="数据绑定：取值表达式、ng-bind、ng-model"><a href="#数据绑定：取值表达式、ng-bind、ng-model" class="headerlink" title="数据绑定：取值表达式、ng-bind、ng-model"></a>数据绑定：取值表达式、ng-bind、ng-model</h4><pre><code>{{ greeting.text }}
+</code></pre><p>这是一种单向绑定，将数据模型绑定到视图上。缺点是刷新或者网络条件不太好时可能会显示原始代码，常称初始化闪烁。</p>
+<p>可以用ng-bind指令取代双括号的取值表达式来绑定数据，能够避免出现闪烁。</p>
+<pre><code>&lt;p ng-bind=&apos;greeting.text&apos;&gt;&lt;/p&gt;
+</code></pre><p>一般在首页index里使用ng-bind绑定，因为一般是在这个页面加载库。</p>
+<p>使用ng-model就可以实现双向的数据绑定：</p>
+<pre><code>&lt;input type=&apos;username&apos; ng-model=&apos;userInfo.username&apos;&gt;
+</code></pre><h4 id="利用数据绑定动态控制样式：ng-class、ng-show、ng-hide"><a href="#利用数据绑定动态控制样式：ng-class、ng-show、ng-hide" class="headerlink" title="利用数据绑定动态控制样式：ng-class、ng-show、ng-hide"></a>利用数据绑定动态控制样式：ng-class、ng-show、ng-hide</h4><p>利用数据绑定可以修改样式：</p>
+<pre><code>&lt;p class=&apos;text-{{ color }}&apos;&gt;&lt;/p&gt;
+</code></pre><p>利用ng-class可以实现同样的效果：</p>
+<pre><code>&lt;p ng-class=&apos;{error: isError, warning: isWarning}&apos;&gt;&lt;/p&gt;
+</code></pre><p>利用ng-show、ng-hide是两个相反的应用：</p>
+<pre><code>&lt;p ng-show=&apos;pState.Show&apos;&gt;&lt;/p&gt;        
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/22/AngularJS系列（二）：模块化/" itemprop="url">
+                  AngularJS系列（二）：模块化
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-22T00:00:00+08:00" content="2016-07-22">
+              2016-07-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="AngularJS的模块化实现"><a href="#AngularJS的模块化实现" class="headerlink" title="AngularJS的模块化实现"></a>AngularJS的模块化实现</h4><p>为了避免全局空间污染，AngularJS提供了module</p>
+<pre><code>var helloModule = angular.module(&apos;HelloAngular&apos;, []);
+helloModule.controller(&apos;HelloNgCtrl&apos;, [&apos;$scope&apos;,
+    function($scope) {
+        $scope.greeting={
+          text: &apos;hello&apos;
+        };
+    }
+]);
+</code></pre><p>任何一个ng应用都是由控制器、指令、服务、路由、过滤等有限的模块类型构成的。控制器、指令、服务、路由、过滤等分别放在一个模块里，用一个总的app模块作为入口点，它依赖其他所有模块（一般是在app.js中配置依赖模块及路由）。对于AngularJS，<strong>一切都是从模块开始</strong>。</p>
+<h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><p>Ajax缺点：</p>
+<ul>
+<li>不会留下历史记录</li>
+<li>用户无法通过url直接进入某些页面</li>
+<li>难以seo</li>
+</ul>
+<p>一般我们的项目里会有很多视图，AngularJS使用ngRoute进行视图之间的路由，根据访问路径的不同显示不同的view。</p>
+<pre><code>bookStoreApp.config(function($routeProvider) {
+    $routeProvider.when(&apos;/hello&apos;, {  //路径
+        templateUrl: &apos;tpls/hello.html&apos;, //相应的视图
+        controller: &apos;HelloCtrl&apos; //对应的控制器
+    }).when(&apos;/list:bookId&apos;,{    //路径里传参bookId
+        templateUrl:&apos;tpls/bookList.html&apos;,
+        controller:&apos;BookListCtrl&apos;
+    }).otherwise({     //其他路径
+        redirectTo: &apos;/hello&apos;
+                 })
+});
+</code></pre><p>例如url为**#hello 时展现第一个视图。用#告诉浏览器在页面内进行跳转，不向后台请求。</p>
+<p>AngularJS为我们封装好的路由工具ngRoute靠url改变去驱动视图。只能路由一个view。</p>
+<p>除此之外，angularUI也为我们封装了一个独立的路由模块<a href="https://ui-router.github.io/" target="_blank" rel="external">ui-router</a>，它靠状态state 来驱动视图。可以定义多个view，且可以嵌套。</p>
+<h4 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h4><p>与Spring类似的理念，AngularJS在启动时会检测模块是否加载。<br>AngularJS中自带的模块以ng开头。</p>
+<pre><code>var bookStoreApp = angular.module(&apos;bookStoreApp&apos;, [
+    &apos;ngRoute&apos;, &apos;ngAnimate&apos;, &apos;bookStoreCtrls&apos;, &apos;bookStoreFilters&apos;,
+    &apos;bookStoreServices&apos;, &apos;bookStoreDirectives&apos;
+]);
+</code></pre><h4 id="AngularJS本身没有实现AMD-异步模块加载"><a href="#AngularJS本身没有实现AMD-异步模块加载" class="headerlink" title="AngularJS本身没有实现AMD(异步模块加载)"></a>AngularJS本身没有实现AMD(异步模块加载)</h4><p>AngularJS本身没有实现异步加载器。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/19/js古怪用法/" itemprop="url">
                   js古怪用法
                 </a>
@@ -581,7 +1426,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -591,7 +1436,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
