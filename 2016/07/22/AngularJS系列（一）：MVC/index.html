@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="javascript angularjs," />
 
 
 
@@ -84,43 +84,54 @@
 
 
 
-<meta name="description" content="js中this的指向分为四种情况：
+<meta name="description" content="AngularJS是一个前端MVC框架，采用MVC有以下几个目的：
 
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
+切分职责
+复用
+便于后期维护
 
-调用对象的方法时，this指向该对象。
-obj.foo();
+总的来说，MVC是一种手段，主要是为了实现模块化和复用。
+抛开AngularJS，前端MVC框架都会遭遇以下困难：；
 
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
+浏览器首先加载脚本，之后再JIT编译执行。因此必须等待整个页面加载完成才能操作DOM
+js没有提供机制来解决多个文件之间的依赖问题，需要自己解决
+js的原型继承也为前端编程带来很">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中this指向问题">
-<meta property="og:url" content="http://yoursite.com/2016/08/17/js中this指向问题/index.html">
+<meta property="og:title" content="AngularJS系列（一）：MVC">
+<meta property="og:url" content="http://yoursite.com/2016/07/22/AngularJS系列（一）：MVC/index.html">
 <meta property="og:site_name" content="Over the Rainbow">
-<meta property="og:description" content="js中this的指向分为四种情况：
+<meta property="og:description" content="AngularJS是一个前端MVC框架，采用MVC有以下几个目的：
 
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
+切分职责
+复用
+便于后期维护
 
-调用对象的方法时，this指向该对象。
-obj.foo();
+总的来说，MVC是一种手段，主要是为了实现模块化和复用。
+抛开AngularJS，前端MVC框架都会遭遇以下困难：；
 
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
-<meta property="og:updated_time" content="2016-08-21T15:26:41.000Z">
+浏览器首先加载脚本，之后再JIT编译执行。因此必须等待整个页面加载完成才能操作DOM
+js没有提供机制来解决多个文件之间的依赖问题，需要自己解决
+js的原型继承也为前端编程带来很">
+<meta property="og:image" content="http://yoursite.com/source/images/2016-07-22-1.png">
+<meta property="og:image" content="http://yoursite.com/source/images/2016-07-22-2.png">
+<meta property="og:image" content="http://yoursite.com/source/images/2016-07-22-3.png">
+<meta property="og:image" content="http://yoursite.com/source/images/2016-07-22-4.png">
+<meta property="og:updated_time" content="2016-08-29T15:55:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中this指向问题">
-<meta name="twitter:description" content="js中this的指向分为四种情况：
+<meta name="twitter:title" content="AngularJS系列（一）：MVC">
+<meta name="twitter:description" content="AngularJS是一个前端MVC框架，采用MVC有以下几个目的：
 
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
+切分职责
+复用
+便于后期维护
 
-调用对象的方法时，this指向该对象。
-obj.foo();
+总的来说，MVC是一种手段，主要是为了实现模块化和复用。
+抛开AngularJS，前端MVC框架都会遭遇以下困难：；
 
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
+浏览器首先加载脚本，之后再JIT编译执行。因此必须等待整个页面加载完成才能操作DOM
+js没有提供机制来解决多个文件之间的依赖问题，需要自己解决
+js的原型继承也为前端编程带来很">
+<meta name="twitter:image" content="http://yoursite.com/source/images/2016-07-22-1.png">
 
 
 
@@ -141,9 +152,9 @@ new Foo();">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/17/js中this指向问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/22/AngularJS系列（一）：MVC/"/>
 
-  <title> js中this指向问题 | Over the Rainbow </title>
+  <title> AngularJS系列（一）：MVC | Over the Rainbow </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +284,7 @@ new Foo();">
             
             
               
-                js中this指向问题
+                AngularJS系列（一）：MVC
               
             
           </h1>
@@ -285,8 +296,8 @@ new Foo();">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T22:48:05+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2016-07-22T00:00:00+08:00" content="2016-07-22">
+              2016-07-22
             </time>
           </span>
 
@@ -313,51 +324,61 @@ new Foo();">
       
 
       
-        <p>js中this的指向分为四种情况：</p>
+        <p>AngularJS是一个前端MVC框架，采用MVC有以下几个目的：</p>
 <ol>
-<li><p>全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 </p>
-<pre><code>foo();    
-</code></pre></li>
-<li><p>调用对象的方法时，this指向该对象。</p>
-<pre><code>obj.foo();
-</code></pre></li>
-<li><p>用new关键词调用的构造方法中，this指向新构造的对象。</p>
-<pre><code>new Foo();
-</code></pre></li>
+<li>切分职责</li>
+<li>复用</li>
+<li>便于后期维护</li>
 </ol>
-<a id="more"></a>
+<p>总的来说，MVC是一种手段，主要是为了实现模块化和复用。</p>
+<p>抛开AngularJS，前端MVC框架都会遭遇以下困难：；</p>
 <ol>
-<li><p>通过call或apply函数显示设置this，this被显示设置为函数调用的第一个参数。</p>
-<pre><code>foo.call(obj,arg1,arg2);
-foo.apply(obj,[arg1,arg2]);
-</code></pre></li>
+<li>浏览器首先加载脚本，之后再JIT编译执行。因此必须等待整个页面加载完成才能操作DOM</li>
+<li>js没有提供机制来解决多个文件之间的依赖问题，需要自己解决</li>
+<li>js的原型继承也为前端编程带来很多困难</li>
 </ol>
-<p>全局代码或者普通函数调用中的this指向全局对象，这其实是js设计的一个缺陷，常会导致误解。例如以下代码：</p>
-<pre><code>Foo.method = function() {
-    function test() {
-        // 这里的this指向全局对象，而非Foo对象
-    }
-    test();
-}
-</code></pre><p>如果确实需要在test中获取对Foo对象的引用，可以创建一个局部变量暂存Foo对象引用：</p>
-<pre><code>Foo.method = function() {
-    var that = this;
-    function test() {
-        // 使用that来指向Foo对象
-    }
-    test();
-}
-</code></pre><p>再看下面使用了函数表达式的例子：</p>
-<pre><code>var test = someObject.methodTest;
-test();    //这里的this指向全局对象而非someObject对象
-</code></pre><p>为了避免误解，当在确认函数中this中指向的时候，我们应该避免从函数定义处寻找答案，而应<strong>仅</strong>根据函数被调用的方式来确定。也就是说，函数里this的指向<strong>仅由其被调用的方式决定</strong>。</p>
-<p>具体来说，当看到以下代码：</p>
-<pre><code>obj.foo();
-</code></pre><p>就可以确定foo里的this指向obj对象。</p>
-<p>而对于如下代码：</p>
-<pre><code>foo();
-</code></pre><p>则可以确定foo里的this指向全局对象，而与函数foo的定义方式或者闭包等没有关系。（此处不考虑bind及严格模式）。</p>
-<p>this是由被调用方式决定而跟定义方式无关，这使得this可以被改变，增加了编程的灵活性。</p>
+<p>AngularJS实现MVC有以下几种方式：</p>
+<p><img src="source/images/2016-07-22-1.png" alt="image"></p>
+<p>一个控制器控制多个视图，适用于小型项目</p>
+<p><img src="source/images/2016-07-22-2.png" alt="image"></p>
+<p>一个控制器只负责一个视图</p>
+<p>如果控制器1和控制器2实现相同的内容，可以将公共部分作为一个服务service，不要采用继承的方式：</p>
+<p><img src="source/images/2016-07-22-3.png" alt="image"><br><img src="source/images/2016-07-22-4.png" alt="image"></p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html ng-app&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div ng-controller=&quot;HelloAngular&quot;&gt;
+      &lt;input ng-model=&quot;greeting.text&quot; /&gt;
+    &lt;p&gt;{{greeting.text}},Angular&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;script src=&quot;js/angular-1.3.0.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;HelloAngular_MVC.js&quot;&gt;&lt;/script&gt;    
+&lt;/html&gt;
+</code></pre><p>ng-controller赋值的HelloAngular函数就是Controller。View是页面上我们看到的东西，本例中就是</p><p>标签。</p><p>标签中内容是数据模型Model。</p>
+<h5 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h5><p>使用Controller要注意以下几点：</p>
+<ol>
+<li>不要试图复制Controller,一个Controller一般只负责一小块视图</li>
+<li>不要在Controller里操作DOM</li>
+<li>不要在Controller里做数据格式化，ng有很好用的表单控件</li>
+<li>不要在Controller里做数据过滤操作，ng有$filter服务</li>
+<li>应尽量避免Controller之间的互相调用，因为这是一种强耦合，Controller之间的交互通过事件进行</li>
+</ol>
+<h5 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h5><p>通过ng-model指令来绑定</p>
+<pre><code>&lt;input ng-model=&quot;greeting.text&quot; /&gt;
+&lt;p&gt;{{greeting.text}},Angular&lt;/p&gt;
+</code></pre><h5 id="View"><a href="#View" class="headerlink" title="View"></a>View</h5><h5 id="scope"><a href="#scope" class="headerlink" title="$scope"></a>$scope</h5><p>AngularJS的MVC是通过$scope来实现的。$scope是MVC和实现双向数据绑定的基础</p>
+<ol>
+<li>$scope是表达式的执行环境（作用域）</li>
+<li>$scope是一个树形结构，与DOM结构平行，通过这种结构可以实现子标签继承父标签的属性和方法</li>
+<li>提供了一些方法$watch()/$apply()对数据进行监控</li>
+<li>每一个angular应用只有一个根$scope对象，一般位于ng-app上</li>
+<li>$scope可以向上或向下传播事件</li>
+</ol>
+<p>#### </p>
 
       
     </div>
@@ -380,7 +401,7 @@ test();    //这里的this指向全局对象而非someObject对象
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/javascript-angularjs/" rel="tag">#javascript angularjs</a>
           
         </div>
       
@@ -389,16 +410,16 @@ test();    //这里的this指向全局对象而非someObject对象
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/16/ES6-Promise对象初探/" rel="next" title="ES6-Promise对象初探">
-                <i class="fa fa-chevron-left"></i> ES6-Promise对象初探
+              <a href="/2016/07/22/AngularJS系列（三）：双向数据绑定/" rel="next" title="AngularJS系列（三）：双向数据绑定">
+                <i class="fa fa-chevron-left"></i> AngularJS系列（三）：双向数据绑定
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/22/AngularJS系列（四）：指令/" rel="prev" title="AngularJS系列（四）：指令">
-                AngularJS系列（四）：指令 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/16/ES6-Promise对象初探/" rel="prev" title="ES6-Promise对象初探">
+                ES6-Promise对象初探 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,7 +538,7 @@ test();    //这里的this指向全局对象而非someObject对象
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Controller"><span class="nav-number">1.</span> <span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Model"><span class="nav-number">2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#View"><span class="nav-number">3.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scope"><span class="nav-number">4.</span> <span class="nav-text">$scope</span></a></li></ol></div>
             
           </div>
         </section>

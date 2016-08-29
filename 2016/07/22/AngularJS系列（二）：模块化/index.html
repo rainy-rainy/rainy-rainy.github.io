@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="javascript angularjs," />
 
 
 
@@ -84,43 +84,25 @@
 
 
 
-<meta name="description" content="js中this的指向分为四种情况：
-
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
-
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
+<meta name="description" content="AngularJS的模块化实现为了避免全局空间污染，AngularJS提供了module
+var helloModule = angular.module(&amp;apos;HelloAngular&amp;apos;, []);
+helloModule.controller(&amp;apos;HelloNgCtrl&amp;apos;, [&amp;apos;$scope&amp;apos;,
+    function($scope) {">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中this指向问题">
-<meta property="og:url" content="http://yoursite.com/2016/08/17/js中this指向问题/index.html">
+<meta property="og:title" content="AngularJS系列（二）：模块化">
+<meta property="og:url" content="http://yoursite.com/2016/07/22/AngularJS系列（二）：模块化/index.html">
 <meta property="og:site_name" content="Over the Rainbow">
-<meta property="og:description" content="js中this的指向分为四种情况：
-
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
-
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
-<meta property="og:updated_time" content="2016-08-21T15:26:41.000Z">
+<meta property="og:description" content="AngularJS的模块化实现为了避免全局空间污染，AngularJS提供了module
+var helloModule = angular.module(&amp;apos;HelloAngular&amp;apos;, []);
+helloModule.controller(&amp;apos;HelloNgCtrl&amp;apos;, [&amp;apos;$scope&amp;apos;,
+    function($scope) {">
+<meta property="og:updated_time" content="2016-08-22T13:00:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中this指向问题">
-<meta name="twitter:description" content="js中this的指向分为四种情况：
-
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
-
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
+<meta name="twitter:title" content="AngularJS系列（二）：模块化">
+<meta name="twitter:description" content="AngularJS的模块化实现为了避免全局空间污染，AngularJS提供了module
+var helloModule = angular.module(&amp;apos;HelloAngular&amp;apos;, []);
+helloModule.controller(&amp;apos;HelloNgCtrl&amp;apos;, [&amp;apos;$scope&amp;apos;,
+    function($scope) {">
 
 
 
@@ -141,9 +123,9 @@ new Foo();">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/17/js中this指向问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/22/AngularJS系列（二）：模块化/"/>
 
-  <title> js中this指向问题 | Over the Rainbow </title>
+  <title> AngularJS系列（二）：模块化 | Over the Rainbow </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +255,7 @@ new Foo();">
             
             
               
-                js中this指向问题
+                AngularJS系列（二）：模块化
               
             
           </h1>
@@ -285,8 +267,8 @@ new Foo();">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T22:48:05+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2016-07-22T00:00:00+08:00" content="2016-07-22">
+              2016-07-22
             </time>
           </span>
 
@@ -313,51 +295,43 @@ new Foo();">
       
 
       
-        <p>js中this的指向分为四种情况：</p>
-<ol>
-<li><p>全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 </p>
-<pre><code>foo();    
-</code></pre></li>
-<li><p>调用对象的方法时，this指向该对象。</p>
-<pre><code>obj.foo();
-</code></pre></li>
-<li><p>用new关键词调用的构造方法中，this指向新构造的对象。</p>
-<pre><code>new Foo();
-</code></pre></li>
-</ol>
-<a id="more"></a>
-<ol>
-<li><p>通过call或apply函数显示设置this，this被显示设置为函数调用的第一个参数。</p>
-<pre><code>foo.call(obj,arg1,arg2);
-foo.apply(obj,[arg1,arg2]);
-</code></pre></li>
-</ol>
-<p>全局代码或者普通函数调用中的this指向全局对象，这其实是js设计的一个缺陷，常会导致误解。例如以下代码：</p>
-<pre><code>Foo.method = function() {
-    function test() {
-        // 这里的this指向全局对象，而非Foo对象
+        <h4 id="AngularJS的模块化实现"><a href="#AngularJS的模块化实现" class="headerlink" title="AngularJS的模块化实现"></a>AngularJS的模块化实现</h4><p>为了避免全局空间污染，AngularJS提供了module</p>
+<pre><code>var helloModule = angular.module(&apos;HelloAngular&apos;, []);
+helloModule.controller(&apos;HelloNgCtrl&apos;, [&apos;$scope&apos;,
+    function($scope) {
+        $scope.greeting={
+          text: &apos;hello&apos;
+        };
     }
-    test();
-}
-</code></pre><p>如果确实需要在test中获取对Foo对象的引用，可以创建一个局部变量暂存Foo对象引用：</p>
-<pre><code>Foo.method = function() {
-    var that = this;
-    function test() {
-        // 使用that来指向Foo对象
-    }
-    test();
-}
-</code></pre><p>再看下面使用了函数表达式的例子：</p>
-<pre><code>var test = someObject.methodTest;
-test();    //这里的this指向全局对象而非someObject对象
-</code></pre><p>为了避免误解，当在确认函数中this中指向的时候，我们应该避免从函数定义处寻找答案，而应<strong>仅</strong>根据函数被调用的方式来确定。也就是说，函数里this的指向<strong>仅由其被调用的方式决定</strong>。</p>
-<p>具体来说，当看到以下代码：</p>
-<pre><code>obj.foo();
-</code></pre><p>就可以确定foo里的this指向obj对象。</p>
-<p>而对于如下代码：</p>
-<pre><code>foo();
-</code></pre><p>则可以确定foo里的this指向全局对象，而与函数foo的定义方式或者闭包等没有关系。（此处不考虑bind及严格模式）。</p>
-<p>this是由被调用方式决定而跟定义方式无关，这使得this可以被改变，增加了编程的灵活性。</p>
+]);
+</code></pre><p>任何一个ng应用都是由控制器、指令、服务、路由、过滤等有限的模块类型构成的。控制器、指令、服务、路由、过滤等分别放在一个模块里，用一个总的app模块作为入口点，它依赖其他所有模块（一般是在app.js中配置依赖模块及路由）。对于AngularJS，<strong>一切都是从模块开始</strong>。</p>
+<h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><p>Ajax缺点：</p>
+<ul>
+<li>不会留下历史记录</li>
+<li>用户无法通过url直接进入某些页面</li>
+<li>难以seo</li>
+</ul>
+<p>一般我们的项目里会有很多视图，AngularJS使用ngRoute进行视图之间的路由，根据访问路径的不同显示不同的view。</p>
+<pre><code>bookStoreApp.config(function($routeProvider) {
+    $routeProvider.when(&apos;/hello&apos;, {  //路径
+        templateUrl: &apos;tpls/hello.html&apos;, //相应的视图
+        controller: &apos;HelloCtrl&apos; //对应的控制器
+    }).when(&apos;/list:bookId&apos;,{    //路径里传参bookId
+        templateUrl:&apos;tpls/bookList.html&apos;,
+        controller:&apos;BookListCtrl&apos;
+    }).otherwise({     //其他路径
+        redirectTo: &apos;/hello&apos;
+                 })
+});
+</code></pre><p>例如url为**#hello 时展现第一个视图。用#告诉浏览器在页面内进行跳转，不向后台请求。</p>
+<p>AngularJS为我们封装好的路由工具ngRoute靠url改变去驱动视图。只能路由一个view。</p>
+<p>除此之外，angularUI也为我们封装了一个独立的路由模块<a href="https://ui-router.github.io/" target="_blank" rel="external">ui-router</a>，它靠状态state 来驱动视图。可以定义多个view，且可以嵌套。</p>
+<h4 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h4><p>与Spring类似的理念，AngularJS在启动时会检测模块是否加载。<br>AngularJS中自带的模块以ng开头。</p>
+<pre><code>var bookStoreApp = angular.module(&apos;bookStoreApp&apos;, [
+    &apos;ngRoute&apos;, &apos;ngAnimate&apos;, &apos;bookStoreCtrls&apos;, &apos;bookStoreFilters&apos;,
+    &apos;bookStoreServices&apos;, &apos;bookStoreDirectives&apos;
+]);
+</code></pre><h4 id="AngularJS本身没有实现AMD-异步模块加载"><a href="#AngularJS本身没有实现AMD-异步模块加载" class="headerlink" title="AngularJS本身没有实现AMD(异步模块加载)"></a>AngularJS本身没有实现AMD(异步模块加载)</h4><p>AngularJS本身没有实现异步加载器。</p>
 
       
     </div>
@@ -380,7 +354,7 @@ test();    //这里的this指向全局对象而非someObject对象
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/javascript-angularjs/" rel="tag">#javascript angularjs</a>
           
         </div>
       
@@ -389,16 +363,16 @@ test();    //这里的this指向全局对象而非someObject对象
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/16/ES6-Promise对象初探/" rel="next" title="ES6-Promise对象初探">
-                <i class="fa fa-chevron-left"></i> ES6-Promise对象初探
+              <a href="/2016/07/19/js古怪用法/" rel="next" title="js古怪用法">
+                <i class="fa fa-chevron-left"></i> js古怪用法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/22/AngularJS系列（四）：指令/" rel="prev" title="AngularJS系列（四）：指令">
-                AngularJS系列（四）：指令 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/22/AngularJS系列（三）：双向数据绑定/" rel="prev" title="AngularJS系列（三）：双向数据绑定">
+                AngularJS系列（三）：双向数据绑定 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,7 +491,7 @@ test();    //这里的this指向全局对象而非someObject对象
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#AngularJS的模块化实现"><span class="nav-number">1.</span> <span class="nav-text">AngularJS的模块化实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由"><span class="nav-number">2.</span> <span class="nav-text">路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#依赖注入"><span class="nav-number">3.</span> <span class="nav-text">依赖注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AngularJS本身没有实现AMD-异步模块加载"><span class="nav-number">4.</span> <span class="nav-text">AngularJS本身没有实现AMD(异步模块加载)</span></a></li></ol></div>
             
           </div>
         </section>

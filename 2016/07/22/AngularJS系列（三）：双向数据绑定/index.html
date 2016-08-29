@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,43 +84,34 @@
 
 
 
-<meta name="description" content="js中this的指向分为四种情况：
+<meta name="description" content="双向数据绑定是AngularJS中一个非常吸引人的特性，极大方便了form表单的交互实现。顾名思义，双向数据绑定存在从数据模型和视图之间的双向绑定：
 
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
+控制器修改数据模型后，数据模型的变更会反映到视图上
+视图上发生了数据的变化，能够自动同步到模型上
 
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
+数据绑定：取值表达式、ng-bind、ng-model{{ greeting.text }}
+这是一种单向绑定，将数据模型绑定到视图上。缺点是刷新或">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中this指向问题">
-<meta property="og:url" content="http://yoursite.com/2016/08/17/js中this指向问题/index.html">
+<meta property="og:title" content="AngularJS系列（三）：双向数据绑定">
+<meta property="og:url" content="http://yoursite.com/2016/07/22/AngularJS系列（三）：双向数据绑定/index.html">
 <meta property="og:site_name" content="Over the Rainbow">
-<meta property="og:description" content="js中this的指向分为四种情况：
+<meta property="og:description" content="双向数据绑定是AngularJS中一个非常吸引人的特性，极大方便了form表单的交互实现。顾名思义，双向数据绑定存在从数据模型和视图之间的双向绑定：
 
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
+控制器修改数据模型后，数据模型的变更会反映到视图上
+视图上发生了数据的变化，能够自动同步到模型上
 
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
-<meta property="og:updated_time" content="2016-08-21T15:26:41.000Z">
+数据绑定：取值表达式、ng-bind、ng-model{{ greeting.text }}
+这是一种单向绑定，将数据模型绑定到视图上。缺点是刷新或">
+<meta property="og:updated_time" content="2016-08-29T15:54:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中this指向问题">
-<meta name="twitter:description" content="js中this的指向分为四种情况：
+<meta name="twitter:title" content="AngularJS系列（三）：双向数据绑定">
+<meta name="twitter:description" content="双向数据绑定是AngularJS中一个非常吸引人的特性，极大方便了form表单的交互实现。顾名思义，双向数据绑定存在从数据模型和视图之间的双向绑定：
 
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
+控制器修改数据模型后，数据模型的变更会反映到视图上
+视图上发生了数据的变化，能够自动同步到模型上
 
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
+数据绑定：取值表达式、ng-bind、ng-model{{ greeting.text }}
+这是一种单向绑定，将数据模型绑定到视图上。缺点是刷新或">
 
 
 
@@ -141,9 +132,9 @@ new Foo();">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/17/js中this指向问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/22/AngularJS系列（三）：双向数据绑定/"/>
 
-  <title> js中this指向问题 | Over the Rainbow </title>
+  <title> AngularJS系列（三）：双向数据绑定 | Over the Rainbow </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +264,7 @@ new Foo();">
             
             
               
-                js中this指向问题
+                AngularJS系列（三）：双向数据绑定
               
             
           </h1>
@@ -285,8 +276,8 @@ new Foo();">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T22:48:05+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2016-07-22T00:00:00+08:00" content="2016-07-22">
+              2016-07-22
             </time>
           </span>
 
@@ -313,52 +304,25 @@ new Foo();">
       
 
       
-        <p>js中this的指向分为四种情况：</p>
-<ol>
-<li><p>全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 </p>
-<pre><code>foo();    
-</code></pre></li>
-<li><p>调用对象的方法时，this指向该对象。</p>
-<pre><code>obj.foo();
-</code></pre></li>
-<li><p>用new关键词调用的构造方法中，this指向新构造的对象。</p>
-<pre><code>new Foo();
-</code></pre></li>
-</ol>
-<a id="more"></a>
-<ol>
-<li><p>通过call或apply函数显示设置this，this被显示设置为函数调用的第一个参数。</p>
-<pre><code>foo.call(obj,arg1,arg2);
-foo.apply(obj,[arg1,arg2]);
-</code></pre></li>
-</ol>
-<p>全局代码或者普通函数调用中的this指向全局对象，这其实是js设计的一个缺陷，常会导致误解。例如以下代码：</p>
-<pre><code>Foo.method = function() {
-    function test() {
-        // 这里的this指向全局对象，而非Foo对象
-    }
-    test();
-}
-</code></pre><p>如果确实需要在test中获取对Foo对象的引用，可以创建一个局部变量暂存Foo对象引用：</p>
-<pre><code>Foo.method = function() {
-    var that = this;
-    function test() {
-        // 使用that来指向Foo对象
-    }
-    test();
-}
-</code></pre><p>再看下面使用了函数表达式的例子：</p>
-<pre><code>var test = someObject.methodTest;
-test();    //这里的this指向全局对象而非someObject对象
-</code></pre><p>为了避免误解，当在确认函数中this中指向的时候，我们应该避免从函数定义处寻找答案，而应<strong>仅</strong>根据函数被调用的方式来确定。也就是说，函数里this的指向<strong>仅由其被调用的方式决定</strong>。</p>
-<p>具体来说，当看到以下代码：</p>
-<pre><code>obj.foo();
-</code></pre><p>就可以确定foo里的this指向obj对象。</p>
-<p>而对于如下代码：</p>
-<pre><code>foo();
-</code></pre><p>则可以确定foo里的this指向全局对象，而与函数foo的定义方式或者闭包等没有关系。（此处不考虑bind及严格模式）。</p>
-<p>this是由被调用方式决定而跟定义方式无关，这使得this可以被改变，增加了编程的灵活性。</p>
-
+        <p>双向数据绑定是AngularJS中一个非常吸引人的特性，极大方便了form表单的交互实现。顾名思义，双向数据绑定存在从数据模型和视图之间的双向绑定：</p>
+<ul>
+<li>控制器修改数据模型后，数据模型的变更会反映到视图上</li>
+<li>视图上发生了数据的变化，能够自动同步到模型上</li>
+</ul>
+<h4 id="数据绑定：取值表达式、ng-bind、ng-model"><a href="#数据绑定：取值表达式、ng-bind、ng-model" class="headerlink" title="数据绑定：取值表达式、ng-bind、ng-model"></a>数据绑定：取值表达式、ng-bind、ng-model</h4><pre><code>{{ greeting.text }}
+</code></pre><p>这是一种单向绑定，将数据模型绑定到视图上。缺点是刷新或者网络条件不太好时可能会显示原始代码，常称初始化闪烁。</p>
+<p>可以用ng-bind指令取代双括号的取值表达式来绑定数据，能够避免出现闪烁。</p>
+<pre><code>&lt;p ng-bind=&apos;greeting.text&apos;&gt;&lt;/p&gt;
+</code></pre><p>一般在首页index里使用ng-bind绑定，因为一般是在这个页面加载库。</p>
+<p>使用ng-model就可以实现双向的数据绑定：</p>
+<pre><code>&lt;input type=&apos;username&apos; ng-model=&apos;userInfo.username&apos;&gt;
+</code></pre><h4 id="利用数据绑定动态控制样式：ng-class、ng-show、ng-hide"><a href="#利用数据绑定动态控制样式：ng-class、ng-show、ng-hide" class="headerlink" title="利用数据绑定动态控制样式：ng-class、ng-show、ng-hide"></a>利用数据绑定动态控制样式：ng-class、ng-show、ng-hide</h4><p>利用数据绑定可以修改样式：</p>
+<pre><code>&lt;p class=&apos;text-{{ color }}&apos;&gt;&lt;/p&gt;
+</code></pre><p>利用ng-class可以实现同样的效果：</p>
+<pre><code>&lt;p ng-class=&apos;{error: isError, warning: isWarning}&apos;&gt;&lt;/p&gt;
+</code></pre><p>利用ng-show、ng-hide是两个相反的应用：</p>
+<pre><code>&lt;p ng-show=&apos;pState.Show&apos;&gt;&lt;/p&gt;        
+</code></pre>
       
     </div>
 
@@ -378,27 +342,21 @@ test();    //这里的this指向全局对象而非someObject对象
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/16/ES6-Promise对象初探/" rel="next" title="ES6-Promise对象初探">
-                <i class="fa fa-chevron-left"></i> ES6-Promise对象初探
+              <a href="/2016/07/22/AngularJS系列（二）：模块化/" rel="next" title="AngularJS系列（二）：模块化">
+                <i class="fa fa-chevron-left"></i> AngularJS系列（二）：模块化
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/22/AngularJS系列（四）：指令/" rel="prev" title="AngularJS系列（四）：指令">
-                AngularJS系列（四）：指令 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/22/AngularJS系列（一）：MVC/" rel="prev" title="AngularJS系列（一）：MVC">
+                AngularJS系列（一）：MVC <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,7 +475,7 @@ test();    //这里的this指向全局对象而非someObject对象
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据绑定：取值表达式、ng-bind、ng-model"><span class="nav-number">1.</span> <span class="nav-text">数据绑定：取值表达式、ng-bind、ng-model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用数据绑定动态控制样式：ng-class、ng-show、ng-hide"><span class="nav-number">2.</span> <span class="nav-text">利用数据绑定动态控制样式：ng-class、ng-show、ng-hide</span></a></li></ol></div>
             
           </div>
         </section>

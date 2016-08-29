@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,43 +84,31 @@
 
 
 
-<meta name="description" content="js中this的指向分为四种情况：
-
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
-
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
+<meta name="description" content="指令是AngularJS的四大特性中最复杂的一个特性。
+最简单的指令hello使用AngularJS时应避免在Controller等中操作DOM，不符合设计思想。如果要操作DOM，可以在指令中进行。下面是一个最简单的指令hello使用方式。
+HTML：
+&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;
+JS：
+var myModule=angular.module(&amp;quot;myModul">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中this指向问题">
-<meta property="og:url" content="http://yoursite.com/2016/08/17/js中this指向问题/index.html">
+<meta property="og:title" content="AngularJS系列（四）：指令">
+<meta property="og:url" content="http://yoursite.com/2016/08/22/AngularJS系列（四）：指令/index.html">
 <meta property="og:site_name" content="Over the Rainbow">
-<meta property="og:description" content="js中this的指向分为四种情况：
-
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
-
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
-<meta property="og:updated_time" content="2016-08-21T15:26:41.000Z">
+<meta property="og:description" content="指令是AngularJS的四大特性中最复杂的一个特性。
+最简单的指令hello使用AngularJS时应避免在Controller等中操作DOM，不符合设计思想。如果要操作DOM，可以在指令中进行。下面是一个最简单的指令hello使用方式。
+HTML：
+&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;
+JS：
+var myModule=angular.module(&amp;quot;myModul">
+<meta property="og:updated_time" content="2016-08-25T02:58:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中this指向问题">
-<meta name="twitter:description" content="js中this的指向分为四种情况：
-
-全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 
-foo();    
-
-调用对象的方法时，this指向该对象。
-obj.foo();
-
-用new关键词调用的构造方法中，this指向新构造的对象。
-new Foo();">
+<meta name="twitter:title" content="AngularJS系列（四）：指令">
+<meta name="twitter:description" content="指令是AngularJS的四大特性中最复杂的一个特性。
+最简单的指令hello使用AngularJS时应避免在Controller等中操作DOM，不符合设计思想。如果要操作DOM，可以在指令中进行。下面是一个最简单的指令hello使用方式。
+HTML：
+&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;
+JS：
+var myModule=angular.module(&amp;quot;myModul">
 
 
 
@@ -141,9 +129,9 @@ new Foo();">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/17/js中this指向问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/22/AngularJS系列（四）：指令/"/>
 
-  <title> js中this指向问题 | Over the Rainbow </title>
+  <title> AngularJS系列（四）：指令 | Over the Rainbow </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +261,7 @@ new Foo();">
             
             
               
-                js中this指向问题
+                AngularJS系列（四）：指令
               
             
           </h1>
@@ -285,8 +273,8 @@ new Foo();">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T22:48:05+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2016-08-22T00:00:00+08:00" content="2016-08-22">
+              2016-08-22
             </time>
           </span>
 
@@ -313,52 +301,83 @@ new Foo();">
       
 
       
-        <p>js中this的指向分为四种情况：</p>
-<ol>
-<li><p>全局范围内或者普通函数调用中，this指向全局对象，在浏览器中即是window对象。 </p>
-<pre><code>foo();    
-</code></pre></li>
-<li><p>调用对象的方法时，this指向该对象。</p>
-<pre><code>obj.foo();
-</code></pre></li>
-<li><p>用new关键词调用的构造方法中，this指向新构造的对象。</p>
-<pre><code>new Foo();
-</code></pre></li>
+        <p>指令是AngularJS的四大特性中最复杂的一个特性。</p>
+<h4 id="最简单的指令hello"><a href="#最简单的指令hello" class="headerlink" title="最简单的指令hello"></a>最简单的指令hello</h4><p>使用AngularJS时应避免在Controller等中操作DOM，不符合设计思想。如果要操作DOM，可以在指令中进行。下面是一个最简单的指令hello使用方式。</p>
+<p>HTML：</p>
+<pre><code>&lt;hello&gt;&lt;/hello&gt;
+</code></pre><p>JS：</p>
+<pre><code>var myModule=angular.module(&quot;myModule&quot;,[]);
+myModule.directive(&quot;hello&quot;,function(){
+      return {
+        restrict: &apos;AE&apos;,
+        template: &apos;&lt;div&gt;Hi everyone!&lt;/div&gt;&apos;,
+        replace: true
+      }
+});
+</code></pre><h5 id="restrict"><a href="#restrict" class="headerlink" title="restrict"></a>restrict</h5><p>配置项restrict表示匹配模式，一共有四个属性“AEMC” ，A:attribute, E:element, M:comment, C:class。下面是这四种匹配模式对应的元素写法，推荐使用前两种方式，具体来说当使用现有标签时用attribute模式，新建标签使用element模式。本例使用第一种element匹配模式。</p>
+<pre><code>&lt;hello&gt;&lt;/hello&gt;
+&lt;div hello&gt;&lt;/div&gt;
+&lt;!-- directive:hello --&gt;        &lt;!-- 注意中间的空格 --&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div class=&quot;hello&quot;&gt;&lt;/div&gt;      
+</code></pre><h5 id="template"><a href="#template" class="headerlink" title="template"></a>template</h5><p>配置项template表示最终要显示出来的html标签，显然采用这种在js中编写模板的方式在编写和修改方面都不是很方便，AngularJS给我们提供了另外一个配置项templateUrl，采用这个配置项切出独立的html代码，就不用将html代码写到js中。</p>
+<pre><code>templateUrl: &apos;hello.html&apos;
+</code></pre><p>除此之外，AngularJS还提供了templateCache配置项，当我们编写的模板不仅仅在hello指令中使用，还需要在其他地方使用，可以使用templateCache将模板缓存起来，让多个指令使用。</p>
+<h5 id="嵌套：replace-amp-transclude"><a href="#嵌套：replace-amp-transclude" class="headerlink" title="嵌套：replace &amp; transclude"></a>嵌套：replace &amp; transclude</h5><p>replace：</p>
+<pre><code>var myModule=angular.module(&quot;myModule&quot;,[]);
+myModule.directive(&quot;hello&quot;,function(){
+      return {
+        restrict: &apos;AE&apos;,
+        replace: true,
+        template: &apos;&lt;div&gt;Hi everyone!&lt;/div&gt;&apos;,
+      }
+});
+</code></pre><p>使用replace时，下面代码中嵌套的内容将不会显示出来</p>
+<pre><code>&lt;hello&gt;
+    &lt;div&gt;这是嵌套的内容！&lt;/div&gt;
+&lt;/hello&gt;
+</code></pre><p>如果需要嵌套，要使用transclude配置项：      </p>
+<p>transclude:</p>
+<pre><code>var myModule=angular.module(&quot;myModule&quot;,[]);
+myModule.directive(&quot;hello&quot;,function(){
+      return {
+        restrict: &apos;AE&apos;,
+        transclude: true,
+        template: &apos;&lt;div&gt;Hi everyone!&lt;div ng-transclude&gt;这是嵌套内容！&lt;/div&gt;&lt;/div&gt;&apos;
+      }
+});
+</code></pre><h4 id="指令运行：compile-amp-link"><a href="#指令运行：compile-amp-link" class="headerlink" title="指令运行：compile &amp; link"></a>指令运行：compile &amp; link</h4><p>指令运行需要三个阶段：加载——编译——链接</p>
+<pre><code>var myModule=angular.module(&quot;myModule&quot;,[]);
+myModule.directive(&quot;hello&quot;,function(){
+      return {
+        restrict: &apos;AE&apos;,
+        replace: true,
+        template: &apos;&lt;div&gt;Hi everyone!&lt;/div&gt;&apos;,
+        compile: function(){
+        }
+        link: function(){
+        }
+      }
+});
+</code></pre><ol>
+<li>加载<ul>
+<li>加载angular.js，找到ng-app指令，确定应用边界</li>
+</ul>
+</li>
+<li>编译<ul>
+<li>遍历DOM，找到所有指令</li>
+<li>根据指令代码中的directive、replace、transclude转换DOM结构</li>
+<li>存在自定义compile函数则调用(调用自定义compile时还要调用内置compile，否则会被覆盖，因此一般不会自定义compile函数)</li>
+</ul>
+</li>
+<li>链接<ul>
+<li>对每条指令运行自定义link函数 </li>
+<li>link函数一般用来操作DOM、绑定事件监听器</li>
+</ul>
+</li>
 </ol>
-<a id="more"></a>
-<ol>
-<li><p>通过call或apply函数显示设置this，this被显示设置为函数调用的第一个参数。</p>
-<pre><code>foo.call(obj,arg1,arg2);
-foo.apply(obj,[arg1,arg2]);
-</code></pre></li>
-</ol>
-<p>全局代码或者普通函数调用中的this指向全局对象，这其实是js设计的一个缺陷，常会导致误解。例如以下代码：</p>
-<pre><code>Foo.method = function() {
-    function test() {
-        // 这里的this指向全局对象，而非Foo对象
-    }
-    test();
-}
-</code></pre><p>如果确实需要在test中获取对Foo对象的引用，可以创建一个局部变量暂存Foo对象引用：</p>
-<pre><code>Foo.method = function() {
-    var that = this;
-    function test() {
-        // 使用that来指向Foo对象
-    }
-    test();
-}
-</code></pre><p>再看下面使用了函数表达式的例子：</p>
-<pre><code>var test = someObject.methodTest;
-test();    //这里的this指向全局对象而非someObject对象
-</code></pre><p>为了避免误解，当在确认函数中this中指向的时候，我们应该避免从函数定义处寻找答案，而应<strong>仅</strong>根据函数被调用的方式来确定。也就是说，函数里this的指向<strong>仅由其被调用的方式决定</strong>。</p>
-<p>具体来说，当看到以下代码：</p>
-<pre><code>obj.foo();
-</code></pre><p>就可以确定foo里的this指向obj对象。</p>
-<p>而对于如下代码：</p>
-<pre><code>foo();
-</code></pre><p>则可以确定foo里的this指向全局对象，而与函数foo的定义方式或者闭包等没有关系。（此处不考虑bind及严格模式）。</p>
-<p>this是由被调用方式决定而跟定义方式无关，这使得this可以被改变，增加了编程的灵活性。</p>
-
+<h4 id="指令和控制器之间的交互"><a href="#指令和控制器之间的交互" class="headerlink" title="指令和控制器之间的交互"></a>指令和控制器之间的交互</h4><p>ng-controller</p>
+<h4 id="指令和指令之间的交互"><a href="#指令和指令之间的交互" class="headerlink" title="指令和指令之间的交互"></a>指令和指令之间的交互</h4><h4 id="scope类型和独立scope"><a href="#scope类型和独立scope" class="headerlink" title="scope类型和独立scope"></a>scope类型和独立scope</h4><h4 id="内置指令"><a href="#内置指令" class="headerlink" title="内置指令"></a>内置指令</h4><h4 id="第三方指令库：angular-ui"><a href="#第三方指令库：angular-ui" class="headerlink" title="第三方指令库：angular-ui"></a>第三方指令库：angular-ui</h4>
       
     </div>
 
@@ -378,27 +397,21 @@ test();    //这里的this指向全局对象而非someObject对象
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/16/ES6-Promise对象初探/" rel="next" title="ES6-Promise对象初探">
-                <i class="fa fa-chevron-left"></i> ES6-Promise对象初探
+              <a href="/2016/08/17/js中this指向问题/" rel="next" title="js中this指向问题">
+                <i class="fa fa-chevron-left"></i> js中this指向问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/22/AngularJS系列（四）：指令/" rel="prev" title="AngularJS系列（四）：指令">
-                AngularJS系列（四）：指令 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/28/CSS实现居中/" rel="prev" title="CSS实现居中">
+                CSS实现居中 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,7 +530,7 @@ test();    //这里的this指向全局对象而非someObject对象
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#最简单的指令hello"><span class="nav-number">1.</span> <span class="nav-text">最简单的指令hello</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#restrict"><span class="nav-number">1.1.</span> <span class="nav-text">restrict</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#template"><span class="nav-number">1.2.</span> <span class="nav-text">template</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#嵌套：replace-amp-transclude"><span class="nav-number">1.3.</span> <span class="nav-text">嵌套：replace & transclude</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指令运行：compile-amp-link"><span class="nav-number">2.</span> <span class="nav-text">指令运行：compile & link</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指令和控制器之间的交互"><span class="nav-number">3.</span> <span class="nav-text">指令和控制器之间的交互</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指令和指令之间的交互"><span class="nav-number">4.</span> <span class="nav-text">指令和指令之间的交互</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scope类型和独立scope"><span class="nav-number">5.</span> <span class="nav-text">scope类型和独立scope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内置指令"><span class="nav-number">6.</span> <span class="nav-text">内置指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三方指令库：angular-ui"><span class="nav-number">7.</span> <span class="nav-text">第三方指令库：angular-ui</span></a></li></ol></div>
             
           </div>
         </section>
